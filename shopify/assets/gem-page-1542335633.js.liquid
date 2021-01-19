@@ -1,0 +1,383 @@
+{% comment %}
+	GEMPAGE BUILDER (https://apps.shopify.com/gempage)
+
+	You SHOULD NOT modify source code in this page because
+	It is automatically generated from GEMPAGE BUILDER
+	Try to edit page with the live editor.
+{% endcomment %}
+
+        jQuery(function() {
+            var $module = jQuery('#m-1542335663599').children('.module');
+            $module.gfV3Product();
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1542335663599-0').children('.module');
+            var effect = $module.attr('data-effect');
+            $module.gfV3ProductImage({
+                'effect': effect
+            })
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1542335663637').children('.module');
+            $module.gfV3ProductImageList({
+                onImageClicked: function(imageUrl, imageZoomUrl) {}
+            });
+
+            var style = $module.attr('data-style');
+            switch(style) {
+                case 'slider':
+                    var navspeed = $module.data('navspeed'),
+                        navlg = $module.data('navlg'),
+                        navmd = $module.data('navmd'),
+                        navsm = $module.data('navsm'),
+                        navxs = $module.data('navxs'),
+                        collg = $module.data('collg'),
+                        colmd = $module.data('colmd'),
+                        colsm = $module.data('colsm'),
+                        colxs = $module.data('colxs'),
+                        dotslg = $module.data('dotslg'),
+                        dotsmd = $module.data('dotsmd'),
+                        dotssm = $module.data('dotssm'),
+                        dotsxs = $module.data('dotsxs'),
+
+                        marginlg = parseInt($module.data('mlg')),
+                        marginmd = parseInt($module.data('mmd')),
+                        marginsm = parseInt($module.data('msm')),
+                        marginxs = parseInt($module.data('mxs'));
+
+                    var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+                    if(mode == 'production') {
+                        var loop = $module.data('loop');
+                    } else {
+                        var loop = 0;
+                    }
+                    $module.find('.gf_product-images-list').owlCarousel({
+                        mouseDrag: true,
+                        navSpeed: navspeed,
+                        autoWidth: !1,
+                        loo: loop,
+                        responsiveClass:true,
+                        responsive:{
+                            0:{
+                                items:colxs,
+                                nav: navxs,
+                                dots:dotsxs,
+                                margin: marginxs
+                            },
+                            768:{
+                                items:colsm,
+                                nav: navsm,
+                                dots:dotssm,
+                                margin: marginsm
+                            },
+                            992:{
+                                items:colmd,
+                                nav: navmd,
+                                dots:dotsmd,
+                                margin: marginmd
+                            },
+                            1200:{
+                                items:collg,
+                                nav: navlg,
+                                dots:dotslg,
+                                margin: marginlg
+                            }
+                        }
+                    }); 
+                    break;
+            }
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1542335663599-1').children('.module');
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1542335663599-2').children('.module');
+            $module.gfV3ProductPrice();
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1542335663575').children('.module');
+            var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+
+            var blankOption = $module.attr('data-blankoption');
+            var blankOptionText = $module.attr('data-blankoptiontext');
+            var style = $module.attr('data-style');
+
+            $module.gfV3ProductVariants({
+                mode: mode,
+                blankOption: blankOption,
+                blankOptionText: blankOptionText,
+                style: style,
+                onVariantSelected: function(variant, $select) {}
+            });
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1542335663496').children('.module');
+            var style = $module.attr('data-style');
+            var updatePrice = $module.attr('data-updateprice');
+
+            $module.gfV3ProductQuantity({
+                'style': style,
+                'updatePrice': updatePrice
+            });
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1542335663599-3').children('.module');
+            $module.gfV3ProductCartButton({ onItemAdded: function() {}});
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513236800200').children('.module').empty();
+            var week = $module.data('week'),
+                day = $module.data('day'), 
+                hour = $module.data('hour'),
+                minute = $module.data('minute'), 
+                second = $module.data('second');
+
+            var weekLabel = $module.data('weeklabel'),
+                dayLabel = $module.data('daylabel'), 
+                hourLabel = $module.data('hourlabel'),
+                minuteLabel = $module.data('minutelabel'), 
+                secondLabel = $module.data('secondlabel');
+
+        
+            var _tpl = '<div class="count-down-wrap"><div class="count-down-inner">';
+                if(week == '1') {
+                    _tpl += '<div class="week-left time-left"><span class="num">26</span><span class="count-label">' + weekLabel + '</span></div>';
+                }
+                if(day == '1') {
+                    _tpl += '<div class="day-left time-left"><span class="num">11</span><span class="count-label">' + dayLabel + '</span></div>';
+                }
+                if(hour == '1') {
+                    _tpl += '<div class="hour-left time-left"><span class="num">09</span><span class="count-label">' + hourLabel + '</span></div>';
+                }
+                if(minute == '1') {
+                    _tpl += '<div class="minute-left time-left"><span class="num">10</span><span class="count-label">' + minuteLabel + '</span></div>';
+                }
+                if(second == '1') {
+                    _tpl += '<div class="second-left time-left"><span class="num">10</span><span class="count-label">' + secondLabel + '</span></div>';
+                }
+            _tpl += '</div></div>';
+            $module.html( _tpl );
+        
+            var $CDinner = $module.find('.count-down-inner');
+            var timeEnd = $module.data('end');
+            $CDinner.countdown(timeEnd, function(event) {
+                $CDinner.children('.week-left').children('.num').text(event.strftime('%w'));
+                ( week == '1' ) ? $CDinner.children('.day-left').children('.num').text( event.strftime('%d') ) : $CDinner.children('.day-left').children('.num').text( event.strftime('%D') );
+                ( week == '0' && day == '0') ? $CDinner.children('.hour-left').children('.num').text(event.strftime('%I') ) : $CDinner.children('.hour-left').children('.num').text( event.strftime('%H') );
+                ( week == '0' && day == '0' && hour == '0') ? $CDinner.children('.minute-left').children('.num').text( event.strftime('%N') ) : $CDinner.children('.minute-left').children('.num').text( event.strftime('%M'));
+                ( week == '0' && day == '0' && hour == '0' && minute == '0') ? $CDinner.children('.second-left').children('.num').text( event.strftime('%T') ) : $CDinner.children('.second-left').children('.num').text( event.strftime('%S'));
+            });
+        });
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513213640607').children('.module');
+            $module.gfV3Product();
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513213640607-1').children('.module');
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513245957964').children('.module');
+            $module.gfV3ProductPrice();
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513213640607-3').children('.module');
+            $module.gfV3ProductCartButton();
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513245886628').children('.module');
+            $module.gfV3Product();
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513246794983').children('.module');
+            $module.gfV3ProductImageList();
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513245886628-0').children('.module');
+            var effect = $module.attr('data-effect');
+            $module.gfV3ProductImage({
+                'effect': effect
+            })
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513245931991').children('.module');
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513213640607-2').children('.module');
+            $module.gfV3ProductPrice();
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513245974302').children('.module');
+            $module.gfV3ProductCartButton();
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513246118709').children('.module');
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513246670901').children('.module');
+            var single   = $module.attr('data-single');
+            var openTab  = $module.attr('data-openDefault');
+            var mode     = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+
+            $module.gfAccordion({
+                single: single,
+                openTab: openTab,
+                mode: mode
+            });
+
+            var borderColor = $module.attr('data-borderColor');
+            var borderSize = $module.attr('data-borderSize');
+
+            $module.children('[data-accordion]').children('[data-control]').css('border-bottom', borderSize + ' solid ' + borderColor);
+
+            $module.children('[data-accordion]').children('[data-content]').children().css('border-bottom', borderSize + ' solid ' + borderColor);
+
+        });
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513246670933').children('.module');
+        }); 
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513246735636').children('.module');
+            var btnLabel = $module.attr('data-btnlabel');
+            $module.gfSocialShare({
+                btnLabel: btnLabel
+            });
+        });
+    
+        jQuery(function() {
+            function gfYoutubeIframe(settings){
+                var iframeHtml = 'Error! Cannot generate youtube video.';
+                if(settings.url != undefined) {
+                    var url = settings.url.split(/watch\?v=/);
+                    if(url) {
+                        iframeHtml = '';
+                        if(settings.responsive == '1') {
+                            iframeHtml += '<style>.gempage-video{position:relative;width:100%;height:0;padding-bottom:56.27198%;}.gempage-video iframe{position:absolute;top:0;left:0;width:100%;height:100%;}</style><div class="gempage-video">';
+                        }
+                        var url = 'https://www.youtube.com/embed/' + url[1] + '?1=1';
+                        if(settings.autoplay == '1') {
+                            url += '&amp;autoplay=1';
+                        }
+                        if(settings.controls == '0') {
+                            url += '&amp;controls=0';
+                        }
+                        if(settings.showinfo == '0') {
+                            url += '&amp;showinfo=0';
+                        }
+                        if(settings.modestbranding == '1') {
+                            url += '&amp;modestbranding=1';
+                        }
+                        if(settings.fs == '0') {
+                            url += '&amp;fs=0';
+                        }
+                        if(settings.rel == '0') {
+                            url += '&amp;rel=0';
+                        }
+                        if(settings.start != '') {
+                            url += '&amp;start=' + parseInt(settings.start);
+                        }
+                        if(settings.end != '') {
+                            url += '&amp;end=' + parseInt(settings.end);
+                        }
+                        if(settings.hd == '1') {
+                            url += '&amp;hd=1';
+                        }
+                        iframeHtml += '<iframe width="' + settings.width + '" height="' + settings.height + '" src="' + url + '" frameborder="0"></iframe>';
+                        if(settings.responsive == '1') {
+                            iframeHtml += '</div><div style="font-size: 0.8em"></div>';
+                        }
+                    }
+                }
+                return iframeHtml;
+            }
+
+            var $module = jQuery('#m-1513247824300').children('.module');
+            var settings = {};
+            if($module.attr('data-url') != undefined) {
+                settings.url = $module.attr('data-url');
+            }
+            settings.width = 500;
+            if($module.attr('data-width') != undefined && $module.attr('data-width') != '' && $module.attr('data-width') != 'auto') {
+                settings.width = parseInt($module.attr('data-width'));
+            }
+            settings.height = 294;
+            if($module.attr('data-height') != undefined && $module.attr('data-height') != '' && $module.attr('data-height') != 'auto') {
+                settings.height = parseInt($module.attr('data-height'));
+            }
+            settings.responsive = 1;
+            if($module.attr('data-responsive') != undefined) {
+                settings.responsive = $module.attr('data-responsive');
+            }
+            settings.autoplay = 0;
+            if($module.attr('data-autoplay') != undefined) {
+                settings.autoplay = $module.attr('data-autoplay');
+            }
+            settings.controls = 1;
+            if($module.attr('data-controls') != undefined) {
+                settings.controls = $module.attr('data-controls');
+            }
+            settings.showinfo = 1;
+            if($module.attr('data-showinfo') != undefined) {
+                settings.showinfo = $module.attr('data-showinfo');
+            }
+            settings.autoplay = 0;
+            if($module.attr('data-autoplay') != undefined) {
+                settings.autoplay = $module.attr('data-autoplay');
+            }
+            settings.modestbranding = 0;
+            if($module.attr('data-modestbranding') != undefined) {
+                settings.modestbranding = $module.attr('data-modestbranding');
+            }
+            settings.fs = 0;
+            if($module.attr('data-fs') != undefined) {
+                settings.fs = $module.attr('data-fs');
+            }
+            settings.rel = 1;
+            if($module.attr('data-rel') != undefined) {
+                settings.rel = $module.attr('data-rel');
+            }
+            settings.hd = 1;
+            if($module.attr('data-hd') != undefined) {
+                settings.hd = $module.attr('data-hd');
+            }
+            settings.start = '';
+            if($module.attr('data-start') != undefined) {
+                settings.start = $module.attr('data-start');
+            }
+            settings.end = '';
+            if($module.attr('data-end') != undefined) {
+                settings.end = $module.attr('data-end');
+            }
+
+            setTimeout(function() {
+                var embedIframe = gfYoutubeIframe(settings);
+                $module.html(embedIframe);
+            }, 100);
+        });
+    
+        jQuery(function() {
+            var $module = jQuery('#m-1513582850638').children('.module');
+            $module.gfV1Mailchimp();
+        });
+    

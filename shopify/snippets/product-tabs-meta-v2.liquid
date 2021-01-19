@@ -1,0 +1,83 @@
+
+  <div class="Product__Tabs Tabs__meta">
+      <div class="Collapsible Collapsible--large">
+        <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+          Benefits: <span class="Collapsible__Plus"></span>
+        </button>
+
+        <div class="Collapsible__Inner">
+          <div class="Collapsible__Content">
+            <div class="Rte">              
+              {{ product.metafields.details.xdesc }}              
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+      <div class="Collapsible Collapsible--large">
+        <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+          How To Use: <span class="Collapsible__Plus"></span>
+        </button>
+
+        <div class="Collapsible__Inner">
+          <div class="Collapsible__Content">
+            <div class="Rte">              
+              {{ product.metafields.details.how-to }}              
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    
+    
+
+      <div class="Collapsible Collapsible--large">
+        <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+          Ingredients: <span class="Collapsible__Plus"></span>
+        </button>
+
+        <div class="Collapsible__Inner">
+          <div class="Collapsible__Content">
+            <div class="Rte">
+               {{ product.metafields.details.ingredients }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    {%- if has_unique_tab_2 -%}
+      <div class="Collapsible Collapsible--large">
+        <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+          {{- unique_tab_2_title -}} <span class="Collapsible__Plus"></span>
+        </button>
+
+        <div class="Collapsible__Inner">
+          <div class="Collapsible__Content">
+            <div class="Rte">
+              {{- unique_tab_2_content -}}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- if has_unique_tab_3 -%}
+      <div class="Collapsible Collapsible--large">
+        <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+          {{- unique_tab_3_title -}} <span class="Collapsible__Plus"></span>
+        </button>
+
+        <div class="Collapsible__Inner">
+          <div class="Collapsible__Content">
+            <div class="Rte">
+              {{- unique_tab_3_content -}}
+            </div>
+          </div>
+        </div>
+      </div>
+    {%- endif -%}
+
+
+  </div>

@@ -1,0 +1,27 @@
+<section id="section-{{ section.id }}" class="pr-bar">
+  <header class="SectionHeader--center">
+      <h2 class="SectionHeader__Heading Heading u-h1">Featured In</h2>
+  </header>
+  <div class="logo-cont">
+	{{ 'gloss-logo.jpg' | file_img_url: 'master' | img_tag }}
+	{{ 'refinery-logo.jpg' | file_img_url: 'master' | img_tag }}
+	{{ 'byrdie-logo.jpg' | file_img_url: 'master' | img_tag }}
+	{{ 'elle-logo.jpg' | file_img_url: 'master' | img_tag }}
+	{{ 'allure-logo.jpg' | file_img_url: 'master' | img_tag }}
+  </div>
+</section> 
+
+
+{% schema %}
+{
+  "name": "PR Section",
+  "settings": [],
+  "presets": [
+    {
+      "category": "Murk",
+      "name": "PR Section",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

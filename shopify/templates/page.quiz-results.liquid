@@ -1,0 +1,31 @@
+{% render 'shogun-products', content: page %}
+<div class="Container">
+  <header class="PageHeader">
+    <div class="SectionHeader SectionHeader--center">
+      <h1 class="SectionHeader__Heading Heading u-h1">{{ page.content }}</h1>
+    </div>
+  </header>
+
+</div>
+
+
+<script>
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+var custom_kit = getParameterByName('custom_kit');
+  console.log(custom_kit);
+  
+  if(custom_kit != undefined){
+  	window.location.href='/';
+  } 
+  
+  
+
+</script>
