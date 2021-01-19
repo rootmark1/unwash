@@ -1,0 +1,43 @@
+<div class="product-primary">
+  <div class="shell">
+    <div class="product__media">
+      <div class="product__image">
+        <div class="slider-pdp">
+          <div class="slider__clip">
+            <div class="js-slides">
+              {%- for image in product.media -%}
+                <div class="slide">
+                  <img src="{{ image | img_url: '600x' }}" alt="{{ image.alt }}" />
+                </div><!-- /.slide -->
+              {%- endfor -%}
+            </div><!-- /.js-slides -->
+          </div><!-- /.slider__clip -->
+        </div><!-- /.slider -->
+      </div><!-- /.product__image -->
+      
+      <div class="product__thumbs">
+        <div class="slider-thumbs">
+          <div class="slider__clip">
+            <div class="js-thumbs">
+              {%- for image in product.media -%}
+                <div class="slide">
+                  <div class="slide__image" style="background-image: url({{ image | img_url: '200x' }});" role="img" aria-label="{{ image.alt }}"></div><!-- /.slide__image -->
+                </div><!-- /.slide -->
+              {%- endfor -%}
+            </div><!-- /.js-thumbs -->
+          </div><!-- /.slider__clip -->
+        </div><!-- /.slider-thumbs -->
+      </div><!-- /.product__thumbs -->
+    </div><!-- /.product__media -->
+    
+    <div class="product__body">
+      <header class="product__head"></header><!-- /.product__head -->
+      
+      <div class="product__content"></div><!-- /.product__content -->
+      
+      <div class="product__form"></div><!-- /.product__form -->
+      
+      <div class="product__badges"></div><!-- /.product__badges -->
+    </div><!-- /.product__body -->
+  </div><!-- /.shell -->
+</div><!-- /.product-primary -->
