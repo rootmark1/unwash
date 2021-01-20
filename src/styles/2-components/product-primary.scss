@@ -1,0 +1,156 @@
+/* ------------------------------------------------------------ *\
+  Product Primary
+\* ------------------------------------------------------------ */
+
+.product-primary {
+  font-family: 'Gotham', arial, serif;
+
+  .product__inner {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 78px 0;
+  }
+
+  .product__media {
+    flex: 0 0 50%;
+    max-width: 50%;
+    width: 50%;
+    padding-right: 48px;
+  }
+
+  .product__body {
+    flex: 0 0 50%;
+    max-width: 50%;
+    width: 50%;
+    padding-left: 22px;
+  }
+
+  .product__image {
+    position: relative;
+  }
+
+  .product__thumbs {
+  }
+
+  .product__head {
+  }
+
+  .product__vendor {
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: #000;
+    margin: 0;
+  }
+
+  .product__title {
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    color: #000;
+    margin: 0;
+    line-height: 1;
+  }
+
+  .product__rating {
+    margin: 10px 0;
+
+    .stamped-badge-starrating .stamped-fa {
+      color: #000;
+    }
+
+    .stamped-badge .stamped-badge-caption {
+      font-size: 11px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+    }
+  }
+
+  .product__price {
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  .product__content {
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .product__form {
+    margin-bottom: 70px;
+
+    .form__body {
+      margin-bottom: 20px;
+    }
+
+    .form__label {
+      font-size: 19px;
+      margin-bottom: 5px;
+    }
+
+    .form__row:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    .form__btn {
+      display: inline-block;
+      font-size: 17px;
+      letter-spacing: 0.22em;
+      padding: 10px;
+      text-transform: uppercase;
+      color: #fff;
+      background-color: #000;
+    }
+  }
+
+  .product-single__variants {
+    display: none;
+  }
+
+  .product__badges {
+    ul {
+      display: flex;
+      flex-flow: row wrap;
+      list-style: none;
+      list-style-position: outside;
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+
+      li {
+        flex: 0 0 50%;
+        max-width: 50%;
+        text-align: center;
+        position: relative;
+        padding: 17px 0;
+        background-color: #96c5bc;
+
+        &:nth-child(4n),
+        &:nth-child(4n-1) {
+          background-color: #8fb6af;
+        }
+
+        &:nth-child(even) {
+          &:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 17px;
+            bottom: 17px;
+            width: 1px;
+            background-color: #fff;
+          }
+        }
+      }
+    }
+  }
+}

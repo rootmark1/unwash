@@ -1,1 +1,15 @@
-// Custom SCSS
+/* ------------------------------------------------------------ *\
+  Vendors
+\* ------------------------------------------------------------ */
+
+@import '~slick-carousel/slick/slick.css';
+
+/* ------------------------------------------------------------ *\
+  Styles
+\* ------------------------------------------------------------ */
+
+@import '2-components/fonts.scss';
+@import '2-components/shell.scss';
+@import '2-components/product-primary.scss';
+@import '2-components/slider-pdp.scss';
+@import '2-components/list.scss';

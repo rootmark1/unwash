@@ -1,0 +1,74 @@
+/* ------------------------------------------------------------ *\
+  Slider PDP
+\* ------------------------------------------------------------ */
+
+.slider-pdp {
+  margin-bottom: 20px;
+
+  .slider__clip {
+  }
+
+  .slick-arrow {
+    font-size: 0;
+    line-height: 0;
+    text-indent: -4000px;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    z-index: 9;
+    width: 60px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+      content: '';
+      width: 30px;
+      height: 30px;
+      border: 1px solid #c7c5c8;
+      transform: rotate(45deg);
+      display: inline-block;
+    }
+
+    &.slick-prev {
+      left: 0;
+
+      &:before {
+        border-right-color: transparent;
+        border-top-color: transparent;
+      }
+    }
+
+    &.slick-next {
+      right: 0;
+      &:before {
+        border-left-color: transparent;
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}
+
+/* ------------------------------------------------------------ *\
+  Slider Thumbs
+\* ------------------------------------------------------------ */
+
+.slider-thumbs {
+  .slider__clip {
+    max-width: 343px;
+    margin: 0 auto;
+  }
+
+  .slide {
+    padding: 0 8px;
+  }
+
+  .slide__image {
+    display: block;
+    padding-bottom: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
