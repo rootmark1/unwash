@@ -31,13 +31,107 @@
     </div><!-- /.product__media -->
     
     <div class="product__body">
-      <header class="product__head"></header><!-- /.product__head -->
+      <header class="product__head">
+        <h3 class="product__vendor"></h3><!-- /.product__vendor -->
+        
+        <h2 class="product__title"></h2><!-- /.product__title -->
+        
+        <h4 class="product__price"></h4><!-- /.product__price -->
+      </header><!-- /.product__head -->
       
       <div class="product__content"></div><!-- /.product__content -->
       
-      <div class="product__form"></div><!-- /.product__form -->
+      <div class="product__form">
+        {% form 'product', product, class: "form product__form" %}
+          <div class="form__body">
+            {%- for option in product.options_with_values -%}
+              {%- assign option_handle = option.name | handle -%}
+
+              <div class="form__row js-custom-variant">
+                <label for="field-{{ option_handle }}" class="form__label">{{ option.name }}</label>
+
+                <div class="form__controls form__controls--select">
+                  <select name="field-{{ option_handle }}" id="field-{{ option_handle }}" class="select">
+                    {%- for value in option.values -%}
+                      <option value="{{ value }}">{{ value }}</option>
+                    {%- endfor -%}
+                  </select>
+                </div><!-- /.form__controls -->
+              </div><!-- /.form__row -->
+            {%- endfor -%}
+
+            <div class="form__row">
+              <label for="field-qty" class="form__label">{{ 'product.form.quantity' | t }}</label>
+              
+              <div class="form__controls form__controls--alt">
+                <div class="qty">
+                  <span class="qty__btn qty__btn--minus">-</span>
+                  <input type="text" id="product-quantity" name="quantity" value="1" min="1" class="qty__field">
+                  <span class="qty__btn qty__btn--plus">+</span>
+                </div><!-- /.qty -->
+
+                <button
+                   type="submit"
+                   name="add"
+                   class="form__btn"
+                   
+                   data-add="{{- 'products.product.add_to_cart' | t -}}"
+                   data-disabled="{{- 'products.product.sold_out' | t -}}"
+
+                  {% unless _product.available %}
+                    disabled
+                  {% endunless %}
+                >
+                  {{- 'product.form.add_to_cart' | t -}}
+                </button>
+              </div><!-- /.form__controls -->
+            </div><!-- /.form__row -->
+          </div><!-- /.form__body -->
+
+          <select name="id" id="product-select" class="select product-single__variants hidden">
+            {% for variant in product.variants %}
+              {%- include 'price' with variant, echo: false -%}
+
+              <option
+                {% if _product.id == variant.id %}
+                   selected
+                {% endif %}
+                
+                 value="{{- variant.id -}}"
+                 data-price="{{- output -}}"
+                 data-variantname="{{- variant.title -}}"
+
+                {% unless variant.available %}
+                   disabled
+                {% endunless %}
+              >
+                {{- variant.title -}}
+              </option>
+            {% endfor %}
+          </select>
+        {% endform %}
+      </div><!-- /.product__form -->
       
-      <div class="product__badges"></div><!-- /.product__badges -->
+      <div class="product__badges">
+        <ul>
+          <li>Safe For All Hair Types</li>
+          <li>non-lather formula</li>
+          <li>Satisfaction guarantee</li>
+          <li>supporting water.org</li>
+        </ul>
+      </div><!-- /.product__badges -->
     </div><!-- /.product__body -->
   </div><!-- /.shell -->
 </div><!-- /.product-primary -->
+
+{%- section 'section-results' -%}
+
+{%- section 'section-ingredients' -%}
+
+{%- section 'section-how' -%}
+
+{%- section 'section-partners' -%}
+
+{%- section 'section-faq' -%}
+
+{%- section 'section-outro' -%}
