@@ -8,6 +8,7 @@
   Styles
 \* ------------------------------------------------------------ */
 
+@import '1-abstracts/variables';
 @import '1-abstracts/mixins';
 @import '1-abstracts/fonts';
 
@@ -17,3 +18,5 @@
 @import '2-components/list';
 @import '2-components/section-results';
 @import '2-components/section-ingredients';
+@import '2-components/section-how';
+@import '2-components/section-partners';

@@ -438,10 +438,66 @@
       width: calc(50% - 10px); }
 
 /* ------------------------------------------------------------ *\
+  List How
+\* ------------------------------------------------------------ */
+.list-how {
+  list-style: none;
+  list-style-position: outside;
+  counter-reset: ol; }
+  .list-how li {
+    margin-bottom: 71px;
+    counter-increment: ol;
+    position: relative; }
+    .list-how li:before {
+      content: counter(ol);
+      font-size: 50px;
+      font-weight: 700;
+      position: absolute;
+      top: 0;
+      left: -46px;
+      line-height: 1; }
+    .list-how li p {
+      line-height: 1.35; }
+
+/* ------------------------------------------------------------ *\
+  List Partners
+\* ------------------------------------------------------------ */
+.list-partners {
+  list-style: none;
+  list-style-position: outside;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: row wrap;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 76px 0; }
+  .list-partners li {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 25%;
+        -ms-flex: 0 0 25%;
+            flex: 0 0 25%;
+    max-width: 25%;
+    margin: 20px 0; }
+  .list-partners img {
+    display: inline-block; }
+
+/* ------------------------------------------------------------ *\
   Section Results
 \* ------------------------------------------------------------ */
 .section-results {
-  font-family: 'Gotham', arial, serif;
+  font-family: "Gotham", arial, serif;
   text-align: center;
   background-color: #e7ced2;
   padding-top: 56px;
@@ -467,7 +523,8 @@
     letter-spacing: 0.22em;
     margin: 0 0 17px 0;
     line-height: 1.32;
-    color: #000; }
+    color: #000;
+    font-family: "Gotham", arial, serif; }
   .section-results .section__actions .btn {
     display: inline-block;
     vertical-align: middle;
@@ -493,14 +550,14 @@
   Section Ingredients
 \* ------------------------------------------------------------ */
 .section-ingredients {
+  z-index: 1;
   color: #000;
+  overflow: hidden;
   padding: 134px 0;
   position: relative;
   text-align: center;
-  font-family: 'Gotham', arial, serif;
-  background-color: #f1f1f1;
-  overflow: hidden;
-  z-index: 1; }
+  font-family: "Gotham", arial, serif;
+  background-color: #f1f1f1; }
   .section-ingredients .decoration {
     position: absolute;
     pointer-events: none;
@@ -525,7 +582,8 @@
     letter-spacing: 0.22em;
     margin: 0 0 17px 0;
     line-height: 1.32;
-    color: #000; }
+    color: #000;
+    font-family: "Gotham", arial, serif; }
   .section-ingredients .section__body {
     padding-top: 41px; }
     .section-ingredients .section__body ul {
@@ -553,4 +611,93 @@
       margin: 0;
       font-size: 28px;
       line-height: 1.3; }
+
+/* ------------------------------------------------------------ *\
+  Section How
+\* ------------------------------------------------------------ */
+.section-how {
+  padding: 115px 0 0 0;
+  color: #000;
+  font-family: "Gotham", arial, serif;
+  font-size: 28px;
+  position: relative;
+  z-index: 1; }
+  .section-how .section__image {
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat; }
+  .section-how .section__inner {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-flow: row wrap;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    position: relative;
+    z-index: 1; }
+  .section-how .section__body {
+    width: 662px;
+    padding-right: 111px;
+    padding-bottom: 29vw; }
+  .section-how .section__title {
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    margin: 0 0 62px 0;
+    line-height: 1.32;
+    color: #000;
+    font-family: "Gotham", arial, serif; }
+  .section-how .section__actions .btn {
+    display: inline-block;
+    vertical-align: middle;
+    background-color: #000;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 15px 60px;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%) translateY(50%);
+            transform: translateX(-50%) translateY(50%);
+    z-index: 2;
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    -webkit-transition: background-color 0.3s;
+    transition: background-color 0.3s; }
+    .section-how .section__actions .btn:hover {
+      background-color: #333; }
+
+/* ------------------------------------------------------------ *\
+  Section Partners
+\* ------------------------------------------------------------ */
+.section-partners {
+  padding: 119px 0;
+  background-color: #f1f1f1;
+  text-align: center; }
+  .section-partners .shell {
+    max-width: 1360px; }
+  .section-partners .section__title {
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    margin: 0 0 20px 0;
+    line-height: 1.32;
+    color: #000;
+    font-family: "Gotham", arial, serif;
+    margin-top: 37px; }
 

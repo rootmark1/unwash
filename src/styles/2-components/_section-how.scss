@@ -1,0 +1,46 @@
+/* ------------------------------------------------------------ *\
+  Section How
+\* ------------------------------------------------------------ */
+
+.section-how {
+  padding: 115px 0 0 0;
+  color: #000;
+  font-family: $font-gotham;
+  font-size: 28px;
+  position: relative;
+  z-index: 1;
+
+  .section__image {
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  .section__inner {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    position: relative;
+    z-index: 1;
+  }
+
+  .section__body {
+    width: 662px;
+    padding-right: 111px;
+    padding-bottom: 29vw;
+  }
+
+  .section__title {
+    @include section-title(62px);
+  }
+
+  .section__actions .btn {
+    @include section-button();
+  }
+}

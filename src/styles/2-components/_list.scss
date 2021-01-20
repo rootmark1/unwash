@@ -90,3 +90,57 @@
     }
   }
 }
+
+/* ------------------------------------------------------------ *\
+  List How
+\* ------------------------------------------------------------ */
+
+.list-how {
+  list-style: none;
+  list-style-position: outside;
+  counter-reset: ol;
+
+  li {
+    margin-bottom: 71px;
+    counter-increment: ol;
+    position: relative;
+
+    &:before {
+      content: counter(ol);
+      font-size: 50px;
+      font-weight: 700;
+      position: absolute;
+      top: 0;
+      left: -46px;
+      line-height: 1;
+    }
+
+    p {
+      line-height: 1.35;
+    }
+  }
+}
+
+/* ------------------------------------------------------------ *\
+  List Partners
+\* ------------------------------------------------------------ */
+
+.list-partners {
+  list-style: none;
+  list-style-position: outside;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 76px 0;
+
+  li {
+    flex: 0 0 25%;
+    max-width: 25%;
+    margin: 20px 0;
+  }
+
+  img {
+    display: inline-block;
+  }
+}

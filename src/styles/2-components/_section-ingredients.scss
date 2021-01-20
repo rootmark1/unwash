@@ -3,14 +3,14 @@
 \* ------------------------------------------------------------ */
 
 .section-ingredients {
+  z-index: 1;
   color: #000;
+  overflow: hidden;
   padding: 134px 0;
   position: relative;
   text-align: center;
-  font-family: 'Gotham', arial, serif;
+  font-family: $font-gotham;
   background-color: #f1f1f1;
-  overflow: hidden;
-  z-index: 1;
 
   .decoration {
     position: absolute;

@@ -1,0 +1,24 @@
+/* ------------------------------------------------------------ *\
+  Section Partners
+\* ------------------------------------------------------------ */
+
+.section-partners {
+  padding: 119px 0;
+  background-color: #f1f1f1;
+  text-align: center;
+
+  .shell {
+    max-width: 1360px;
+  }
+
+  .section__inner {
+  }
+
+  .section__title {
+    @include section-title(20px);
+    margin-top: 37px;
+  }
+
+  .section__body {
+  }
+}

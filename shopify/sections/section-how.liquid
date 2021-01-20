@@ -1,25 +1,90 @@
-<section class="section-how">
+{%- assign _section = section.settings -%}
+{%- assign section_title = _section.title -%}
+{%- assign section_bg_image = _section.bg_image -%}
+{%- assign section_bg_color = _section.bg_color -%}
+
+{%- assign section_cta_text = _section.cta_text -%}
+{%- assign section_cta_url = _section.cta_url -%}
+
+<section class="section-how" style="background-color: {{ section_bg_color }};">
+  {%- if section_bg_image != blank -%}
+    <div class="section__image" style="background-image: url({{ section_bg_image | img_url: '1900x' }});"></div><!-- /.section__image -->
+  {%- endif -%}
+  
   <div class="shell">
-    <div class="section__inner">
-      <div class="section__image"></div><!-- /.section__image -->
-      
+    <div class="section__inner">    
       <div class="section__body">
-        <h2 class="section__title"></h2><!-- /.section__title -->
+        {%- if section_title != blank -%}
+          <h2 class="section__title">{{ section_title }}</h2><!-- /.section__title -->
+        {%- endif -%}
         
         <ol class="list-how">
-          <li>Thoroughly wet your hair to allow the product to saturate evenly. Gather a quarter-sized amount for short hair or 2 to 3x more for thicker, longer hair.</li>
-          
-          <li>Apply the product from roots through to the ends. Massage into areas with excess build-up and oil.</li>
-          
-          <li>Rinse thoroughly, allow hair to air dry, or begin blow-drying.</li>
-          
-          <li>Thoroughly wet your hair to allow the product to saturate evenly. Gather a quarter-sized amount for short hair or 2 to 3x more for thicker, longer hair.</li>
+          {%- for block in section.blocks -%}
+            {%- assign _block = block.settings -%}
+            {%- assign block_text = _block.text -%}
+            
+            <li>
+              <p>{{ block_text | newline_to_br }}</p>
+            </li>
+          {%- endfor -%}          
         </ol><!-- /.list-how -->
       </div><!-- /.section__body -->
       
-      <div class="section__actions">
-        <a href="#" class="btn">Shop Now</a>
-      </div><!-- /.section__actions -->
+      {%- if section_cta_text != blank and section_cta_url != blank -%}
+        <div class="section__actions">
+          <a href="{{ section_cta_url }}" class="btn">{{ section_cta_text }}</a>
+        </div><!-- /.section__actions -->
+      {%- endif -%}
     </div><!-- /.section__inner -->
   </div><!-- /.shell -->
 </section><!-- /.section-how -->
+
+
+{% schema %}
+{
+  "name": "How to use",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image",
+      "label": "Background image"
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#98e8ff"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA URL"
+    }
+  ],
+  "max_blocks": 10,
+  "blocks": [
+    {
+      "type": "item",
+      "name": "List item",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Content"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
