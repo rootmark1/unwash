@@ -482,7 +482,8 @@
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  margin: 76px 0; }
+  margin: 76px 0;
+  color: #000; }
   .list-partners li {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 25%;
@@ -492,6 +493,28 @@
     margin: 20px 0; }
   .list-partners img {
     display: inline-block; }
+
+/* ------------------------------------------------------------ *\
+  List Faq
+\* ------------------------------------------------------------ */
+.list-faq {
+  list-style: none;
+  list-style-position: outside;
+  max-width: 849px;
+  margin: 0 auto; }
+  .list-faq li:not(:last-child) {
+    margin-bottom: 94px; }
+  .list-faq h3 {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    font-size: 31px;
+    font-weight: 700;
+    margin-bottom: 4px; }
+  .list-faq p {
+    font-size: 28px;
+    line-height: 1.3;
+    margin: 0; }
 
 /* ------------------------------------------------------------ *\
   Section Results
@@ -561,20 +584,39 @@
   .section-ingredients .decoration {
     position: absolute;
     pointer-events: none;
-    z-index: -1; }
+    z-index: -1;
+    background-image: url(shape.png);
+    width: 1655px;
+    height: 1306px;
+    background-size: 1655px 1306px;
+    opacity: 10%; }
     .section-ingredients .decoration.decoration--left {
-      background-image: url(decorations-left.png);
-      width: 1199px;
-      height: 1428px;
-      top: -310px;
-      left: -527px;
-      text-decoration: none; }
+      -webkit-transform: rotate(-53deg);
+              transform: rotate(-53deg);
+      top: -129px;
+      left: -788px; }
+      @media (max-width: 1600px) {
+        .section-ingredients .decoration.decoration--left {
+          width: 105.62vw;
+          height: 83.35vw;
+          background-size: 105.62vw 83.35vw;
+          top: -8.5vw;
+          left: -50vw; } }
     .section-ingredients .decoration.decoration--right {
-      background-image: url(decorations-right.png);
-      width: 1509px;
-      height: 1672px;
-      bottom: -162px;
-      right: -792px; }
+      -webkit-transform: rotate(133deg);
+              transform: rotate(133deg);
+      width: 1932px;
+      height: 1525px;
+      background-size: 1932px 1525px;
+      bottom: 4px;
+      right: -1001px; }
+      @media (max-width: 1600px) {
+        .section-ingredients .decoration.decoration--right {
+          width: 123vw;
+          height: 97.4vw;
+          background-size: 123vw 97.4vw;
+          bottom: 0.3vw;
+          right: -63.8vw; } }
   .section-ingredients .section__title {
     text-transform: uppercase;
     font-size: 50px;
@@ -700,4 +742,70 @@
     color: #000;
     font-family: "Gotham", arial, serif;
     margin-top: 37px; }
+
+/* ------------------------------------------------------------ *\
+  Section Faq
+\* ------------------------------------------------------------ */
+.section-faq {
+  text-align: center;
+  font-family: "Gotham", arial, serif;
+  padding: 141px 0;
+  position: relative;
+  z-index: 1;
+  overflow: hidden; }
+  .section-faq .decoration {
+    position: absolute;
+    background-image: url(shape.png);
+    width: 1583px;
+    height: 1250px;
+    background-size: 1583px 1250px;
+    opacity: 10%;
+    pointer-events: none;
+    z-index: -1;
+    -webkit-transform: rotate(-81deg);
+            transform: rotate(-81deg); }
+    @media (max-width: 1600px) {
+      .section-faq .decoration {
+        width: 101.03vw;
+        height: 79.78vw;
+        background-size: 101.03vw 79.78vw; } }
+    .section-faq .decoration.decoration--left {
+      left: -747px;
+      top: -125px; }
+      @media (max-width: 1600px) {
+        .section-faq .decoration.decoration--left {
+          left: -47.7vw;
+          top: -8vw; } }
+    .section-faq .decoration.decoration--right {
+      right: -742px;
+      bottom: -391px; }
+      @media (max-width: 1600px) {
+        .section-faq .decoration.decoration--right {
+          right: -47.4vw;
+          bottom: -25vw; } }
+  .section-faq .section__title {
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    margin: 0 0 83px 0;
+    line-height: 1.32;
+    color: #000;
+    font-family: "Gotham", arial, serif; }
+
+/* ------------------------------------------------------------ *\
+  Section Product Reviews
+\* ------------------------------------------------------------ */
+.section-product-reviews {
+  padding: 155px 0; }
+  .section-product-reviews .section__title {
+    text-transform: uppercase;
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    margin: 0 0 84px 0;
+    line-height: 1.32;
+    color: #000;
+    font-family: "Gotham", arial, serif;
+    text-align: center; }
 

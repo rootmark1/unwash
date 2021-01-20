@@ -1,17 +1,80 @@
-<section class="section-faq">
+{%- assign _section = section.settings -%}
+{%- assign section_title = _section.title -%}
+{%- assign section_decorations = _section.decorations -%}
+{%- assign section_bg_color = _section.bg_color -%}
+
+<section class="section-faq" style="background-color: {{ section_bg_color }};">
+  {%- if section_decorations -%}
+    <span class="decoration decoration--left"></span>
+    <span class="decoration decoration--right"></span>
+  {%- endif -%}
+  
   <div class="shell">
     <div class="section__inner">
-      <h2 class="section__title"></h2><!-- /.section__title -->
+      {%- if section_title != blank -%}
+        <h2 class="section__title">{{ section_title }}</h2><!-- /.section__title -->
+      {%- endif -%}
       
       <div class="section__body">
         <ul class="list-faq">
-          <li>
-            <h3></h3>
+          {%- for block in section.blocks -%}
+            {%- assign _block = block.settings -%}
+            {%- assign block_question = _block.question -%}
+            {%- assign block_answer = _block.answer -%}
             
-            <p></p>
-          </li>
+            <li>
+              <h3>{{ block_question }}</h3>
+              
+              <p>{{ block_answer | newline_to_br }}</p>
+            </li>
+          {%- endfor -%}          
         </ul><!-- /.list-faq -->
       </div><!-- /.section__body -->
     </div><!-- /.section__inner -->
   </div><!-- /.shell -->
 </section><!-- /.section-faq -->
+
+
+{% schema %}
+{
+  "name": "FAQ",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "checkbox",
+      "id": "decorations",
+      "label": "Show decorations",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#98e8ff"
+    }
+  ],
+  "max_blocks": 9999,
+  "blocks": [
+    {
+      "type": "item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question"
+        },
+        {
+          "type": "textarea",
+          "id": "answer",
+          "label": "Answer"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

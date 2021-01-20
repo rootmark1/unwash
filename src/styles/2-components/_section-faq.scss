@@ -1,0 +1,54 @@
+/* ------------------------------------------------------------ *\
+  Section Faq
+\* ------------------------------------------------------------ */
+
+.section-faq {
+  text-align: center;
+  font-family: $font-gotham;
+  padding: 141px 0;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  .decoration {
+    position: absolute;
+    background-image: url(shape.png);
+    width: 1583px;
+    height: 1250px;
+    background-size: 1583px 1250px;
+    opacity: 10%;
+    pointer-events: none;
+    z-index: -1;
+    transform: rotate(-81deg);
+
+    @media #{$large-desktop} {
+      width: 101.03vw;
+      height: 79.78vw;
+      background-size: 101.03vw 79.78vw;
+    }
+
+    &.decoration--left {
+      left: -747px;
+      top: -125px;
+
+      @media #{$large-desktop} {
+        left: -47.7vw;
+        top: -8vw;
+      }
+    }
+
+    &.decoration--right {
+      right: -742px;
+      bottom: -391px;
+
+      @media #{$large-desktop} {
+        right: -47.4vw;
+        bottom: -25vw;
+      }
+    }
+  }
+
+  .section__title {
+    @include section-title(83px);
+  }
+}

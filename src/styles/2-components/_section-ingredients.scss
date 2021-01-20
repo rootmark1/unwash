@@ -16,22 +16,41 @@
     position: absolute;
     pointer-events: none;
     z-index: -1;
+    background-image: url(shape.png);
+    width: 1655px;
+    height: 1306px;
+    background-size: 1655px 1306px;
+    opacity: 10%;
 
     &.decoration--left {
-      background-image: url(decorations-left.png);
-      width: 1199px;
-      height: 1428px;
-      top: -310px;
-      left: -527px;
-      text-decoration: none;
+      transform: rotate(-53deg);
+      top: -129px;
+      left: -788px;
+
+      @media #{$large-desktop} {
+        width: 105.62vw;
+        height: 83.35vw;
+        background-size: 105.62vw 83.35vw;
+        top: -8.5vw;
+        left: -50vw;
+      }
     }
 
     &.decoration--right {
-      background-image: url(decorations-right.png);
-      width: 1509px;
-      height: 1672px;
-      bottom: -162px;
-      right: -792px;
+      transform: rotate(133deg);
+      width: 1932px;
+      height: 1525px;
+      background-size: 1932px 1525px;
+      bottom: 4px;
+      right: -1001px;
+
+      @media #{$large-desktop} {
+        width: 123vw;
+        height: 97.4vw;
+        background-size: 123vw 97.4vw;
+        bottom: 0.3vw;
+        right: -63.8vw;
+      }
     }
   }
 
