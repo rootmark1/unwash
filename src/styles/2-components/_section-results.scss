@@ -1,0 +1,43 @@
+/* ------------------------------------------------------------ *\
+  Section Results
+\* ------------------------------------------------------------ */
+
+.section-results {
+  font-family: 'Gotham', arial, serif;
+  text-align: center;
+  background-color: #e7ced2;
+  padding-top: 56px;
+  padding-bottom: 33px;
+  color: #000;
+  position: relative;
+
+  .section__inner {
+  }
+
+  .section__head {
+    font-size: 32px;
+    margin-bottom: 80px;
+
+    p {
+      margin: 0;
+      letter-spacing: 0;
+      max-width: 978px;
+      margin: 0 auto;
+      line-height: 1.24;
+      letter-spacing: 0.01em;
+    }
+  }
+
+  .section__body {
+    padding: 0 66px;
+  }
+
+  .section__title {
+    @include section-title(17px);
+  }
+
+  .section__actions .btn {
+    @include section-button();
+    text-decoration: none;
+  }
+}

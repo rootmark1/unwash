@@ -8,8 +8,12 @@
   Styles
 \* ------------------------------------------------------------ */
 
-@import '2-components/fonts.scss';
-@import '2-components/shell.scss';
-@import '2-components/product-primary.scss';
-@import '2-components/slider-pdp.scss';
-@import '2-components/list.scss';
+@import '1-abstracts/mixins';
+@import '1-abstracts/fonts';
+
+@import '2-components/shell';
+@import '2-components/product-primary';
+@import '2-components/slider-pdp';
+@import '2-components/list';
+@import '2-components/section-results';
+@import '2-components/section-ingredients';

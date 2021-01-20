@@ -1,43 +1,87 @@
+{%- assign _section = section.settings -%}
+{%- assign section_title = _section.title -%}
+{%- assign section_decorations = _section.decorations -%}
+
 <section class="section-ingredients">
+  {% if section_decorations %}
+    <span class="decoration decoration--left"></span>
+    <span class="decoration decoration--right"></span>
+  {% endif %}
+  
   <div class="shell">
     <div class="section__inner">
-      <h2 class="section__title"></h2><!-- /.section__title -->
+      {%- if section_title != blank -%}
+        <h2 class="section__title">{{ section_title | newline_to_br }}</h2><!-- /.section__title -->
+      {%- endif -%}
       
       <div class="section__body">
         <ul>
-          <li>
-            <img src="assets/images/" alt="" />
+          {%- for block in section.blocks -%}
+            {%- assign _block = block.settings -%}
+            {%- assign block_image = _block.image -%}
+            {%- assign block_title = _block.title -%}
+            {%- assign block_content = _block.content -%}
             
-            <h4></h4>
-            
-            <p></p>
-          </li>
-          
-          <li>
-            <img src="assets/images/" alt="" />
-            
-            <h4></h4>
-            
-            <p></p>
-          </li>
-          
-          <li>
-            <img src="assets/images/" alt="" />
-            
-            <h4></h4>
-            
-            <p></p>
-          </li>
-          
-          <li>
-            <img src="assets/images/" alt="" />
-            
-            <h4></h4>
-            
-            <p></p>
-          </li>
+            <li>
+              {%- if block_image != blank -%}
+                <img src="{{ block_image | img_url: '200x' }}" alt="{{ block_image.alt }}" />
+              {%- endif -%}
+              
+              {%- if block_title != blank -%}
+                <h4>{{ block_title}}</h4>
+              {%- endif -%}
+              
+              {%- if block_content != blank -%}
+                <p>{{ block_content | newline_to_br }}</p>
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
         </ul>
       </div><!-- /.section__body -->
     </div><!-- /.section__inner -->
   </div><!-- /.shell -->
 </section><!-- /.section-ingredients -->
+
+
+{% schema %}
+{
+  "name": "Ingredients",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "checkbox",
+      "id": "decorations",
+      "label": "Show decorations",
+      "default": true
+    }
+  ],
+  "max_blocks": 9999,
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,39 +1,96 @@
+{%- assign _section = section.settings -%}
+{%- assign section_title = _section.title -%}
+{%- assign section_content = _section.content -%}
+{%- assign section_cta_text = _section.cta_text -%}
+{%- assign section_cta_url = _section.cta_url -%}
+
 <section class="section-results">
   <div class="shell">
     <div class="section__inner">
       <header class="section__head">
-        <h2 class="section__title"></h2><!-- /.section__title -->
+        {%- if section_title != blank -%}
+          <h2 class="section__title">{{ section_title }}</h2><!-- /.section__title -->
+        {%- endif -%}
         
-        <p></p>
+        {%- if section_content != blank -%}
+          <p>{{ section_content }}</p>
+        {%- endif -%}
       </header><!-- /.section__head -->
       
       <div class="section__body">
         <ul class="list-results">
-          <li>
-            <img src="assets/images/" alt="" />
-            <img src="assets/images/" alt="" />
-          </li>
-          
-          <li>
-            <img src="assets/images/" alt="" />
-            <img src="assets/images/" alt="" />
-          </li>
-          
-          <li>
-            <img src="assets/images/" alt="" />
-            <img src="assets/images/" alt="" />
-          </li>
-          
-          <li>
-            <img src="assets/images/" alt="" />
-            <img src="assets/images/" alt="" />
-          </li>
+          {%- for block in section.blocks -%}
+            {%- assign _block = block.settings -%}
+            {%- assign block_image_before = _block.image_before -%}
+            {%- assign block_image_after = _block.image_after -%}
+            
+            <li>
+              {%- if block_image_before != blank -%}
+                <img src="{{ block_image_before | img_url: '548x' }}" alt="{{ block_image_before.alt }}" />
+              {%- endif -%}
+              
+              {%- if block_image_after != blank -%}
+                <img src="{{ block_image_after | img_url: '548x' }}" alt="{{ block_image_after.alt }}" />
+              {%- endif -%}
+            </li>
+          {%- endfor -%}
         </ul><!-- /.list-results -->
       </div><!-- /.section__body -->
       
-      <div class="section__actions">
-        <a href="#" class="btn">shop now</a>
-      </div><!-- /.section__actions -->
+      {%- if section_cta_text != blank and section_cta_url != blank -%}
+        <div class="section__actions">
+          <a href="{{ section_cta_url }}" class="btn">{{ section_cta_text }}</a>
+        </div><!-- /.section__actions -->
+      {%- endif -%}
     </div><!-- /.section__inner -->
   </div><!-- /.shell -->
 </section><!-- /.section-results -->
+
+{% schema %}
+{
+  "name": "Results",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "content",
+      "label": "Heading copy"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text"
+    },
+    {
+      "type": "url",
+      "id": "cta_url",
+      "label": "CTA URL"
+    }
+  ],
+  "max_blocks": 9999,
+  "blocks": [
+    {
+      "type": "entry",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_before",
+          "label": "Before",
+          "info": "Recomended image size 274x418"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_after",
+          "label": "After",
+          "info": "Recomended image size 274x418"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

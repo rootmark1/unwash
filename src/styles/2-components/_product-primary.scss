@@ -9,6 +9,7 @@
     display: flex;
     flex-flow: row wrap;
     padding: 78px 0;
+    text-decoration: none;
   }
 
   .product__media {
@@ -16,6 +17,7 @@
     max-width: 50%;
     width: 50%;
     padding-right: 48px;
+    margin-bottom: 24px;
   }
 
   .product__body {
@@ -115,6 +117,8 @@
   }
 
   .product__badges {
+    padding-right: 35px;
+
     ul {
       display: flex;
       flex-flow: row wrap;
