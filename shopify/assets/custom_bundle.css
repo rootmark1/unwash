@@ -498,21 +498,26 @@
   position: relative;
   text-align: center;
   font-family: 'Gotham', arial, serif;
-  background-color: #f1f1f1; }
+  background-color: #f1f1f1;
+  overflow: hidden;
+  z-index: 1; }
   .section-ingredients .decoration {
-    position: absolute; }
+    position: absolute;
+    pointer-events: none;
+    z-index: -1; }
     .section-ingredients .decoration.decoration--left {
       background-image: url(decorations-left.png);
       width: 1199px;
       height: 1428px;
-      top: 0;
-      left: 0; }
+      top: -310px;
+      left: -527px;
+      text-decoration: none; }
     .section-ingredients .decoration.decoration--right {
       background-image: url(decorations-right.png);
       width: 1509px;
       height: 1672px;
-      bottom: 0;
-      right: 0; }
+      bottom: -162px;
+      right: -792px; }
   .section-ingredients .section__title {
     text-transform: uppercase;
     font-size: 50px;
@@ -521,26 +526,31 @@
     margin: 0 0 17px 0;
     line-height: 1.32;
     color: #000; }
-  .section-ingredients .section__body ul {
-    list-style: none;
-    list-style-position: outside; }
-  .section-ingredients .section__body ul li {
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 40px; }
-  .section-ingredients .section__body ul li img {
-    border-radius: 50%;
-    margin-bottom: 20px; }
-  .section-ingredients .section__body ul li h4 {
-    margin: 0;
-    line-height: 1;
-    font-size: 34px;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-transform: capitalize; }
-  .section-ingredients .section__body ul li p {
-    margin: 0;
-    font-size: 28px;
-    line-height: 1.22; }
+  .section-ingredients .section__body {
+    padding-top: 41px; }
+    .section-ingredients .section__body ul {
+      list-style: none;
+      list-style-position: outside; }
+    .section-ingredients .section__body ul li {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 51px; }
+    .section-ingredients .section__body ul li img {
+      border-radius: 50%;
+      margin-bottom: 24px;
+      width: 171px; }
+    .section-ingredients .section__body ul li h4 {
+      margin: 0;
+      line-height: 1;
+      font-size: 34px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: 0.075em;
+      text-transform: uppercase;
+      text-transform: capitalize; }
+    .section-ingredients .section__body ul li p {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.3; }
 
