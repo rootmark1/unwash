@@ -6,9 +6,13 @@
   padding: 115px 0 0 0;
   color: #000;
   font-family: $font-gotham;
-  font-size: 28px;
   position: relative;
   z-index: 1;
+
+  @media #{$mobile} {
+    text-align: center;
+    padding-top: 40px;
+  }
 
   .section__image {
     top: 0;
@@ -20,6 +24,20 @@
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
+
+    &.section__image--desktop {
+      @media #{$mobile} {
+        display: none;
+      }
+    }
+
+    &.section__image--mobile {
+      display: none;
+
+      @media #{$mobile} {
+        display: block;
+      }
+    }
   }
 
   .section__inner {
@@ -34,10 +52,24 @@
     width: 662px;
     padding-right: 111px;
     padding-bottom: 29vw;
+
+    @media #{$small-desktop} {
+      width: 56%;
+      padding-right: 0;
+    }
+
+    @media #{$mobile} {
+      width: auto;
+      padding-bottom: 30px;
+    }
   }
 
   .section__title {
     @include section-title(62px);
+
+    @media #{$mobile} {
+      margin-bottom: 24px;
+    }
   }
 
   .section__actions .btn {

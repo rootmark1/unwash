@@ -1,6 +1,7 @@
 {%- assign _section = section.settings -%}
 {%- assign section_title = _section.title -%}
 {%- assign section_bg_image = _section.bg_image -%}
+{%- assign section_bg_image_mobile = _section.bg_image_mobile -%}
 {%- assign section_bg_color = _section.bg_color -%}
 
 {%- assign section_cta_text = _section.cta_text -%}
@@ -8,7 +9,11 @@
 
 <section class="section-how" style="background-color: {{ section_bg_color }};">
   {%- if section_bg_image != blank -%}
-    <div class="section__image" style="background-image: url({{ section_bg_image | img_url: '1900x' }});"></div><!-- /.section__image -->
+    <div class="section__image {% if section_bg_image_mobile != blank %}section__image--desktop{% endif %}" style="background-image: url({{ section_bg_image | img_url: '1900x' }});"></div><!-- /.section__image -->
+  {%- endif -%}
+  
+  {%- if section_bg_image_mobile != blank -%}
+    <div class="section__image section__image--mobile" style="background-image: url({{ section_bg_image_mobile | img_url: '1900x' }});"></div><!-- /.section__image -->
   {%- endif -%}
   
   <div class="shell">
@@ -52,7 +57,12 @@
     {
       "type": "image_picker",
       "id": "bg_image",
-      "label": "Background image"
+      "label": "Background image desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "bg_image_mobile",
+      "label": "Background image mobile"
     },
     {
       "type": "color",

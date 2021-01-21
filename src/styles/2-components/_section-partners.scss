@@ -7,11 +7,16 @@
   background-color: #f1f1f1;
   text-align: center;
 
-  .shell {
-    max-width: 1360px;
+  @media #{$tablet-portrait} {
+    padding: 60px 0;
   }
 
-  .section__inner {
+  @media #{$mobile} {
+    padding: 30px 0;
+  }
+
+  .shell {
+    max-width: 1360px;
   }
 
   .section__title {

@@ -17,7 +17,15 @@ $('.slider-thumbs .js-thumbs').slick({
   asNavFor: $('.slider-pdp .js-slides'),
   centerMode: true,
   centerPadding: 0,
-  focusOnSelect: true
+  focusOnSelect: true,
+  responsive: [
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1
+      }
+    }
+  ]
 });
 
 $('.js-radio-variant').on('change', function(event) {

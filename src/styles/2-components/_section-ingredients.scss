@@ -12,6 +12,10 @@
   font-family: $font-gotham;
   background-color: #f1f1f1;
 
+  @media #{$mobile} {
+    padding: 46px 0;
+  }
+
   .decoration {
     position: absolute;
     pointer-events: none;
@@ -56,10 +60,19 @@
 
   .section__title {
     @include section-title(17px);
+
+    @media #{$mobile} {
+      line-height: 1.1;
+      margin-bottom: 0;
+    }
   }
 
   .section__body {
     padding-top: 41px;
+
+    @media #{$mobile} {
+      padding-top: 29px;
+    }
 
     ul {
       list-style: none;
@@ -77,6 +90,10 @@
       border-radius: 50%;
       margin-bottom: 24px;
       width: 171px;
+
+      @media #{$mobile} {
+        width: 100px;
+      }
     }
 
     ul li h4 {
@@ -88,12 +105,20 @@
       letter-spacing: 0.075em;
       text-transform: uppercase;
       text-transform: capitalize;
+
+      @media #{$mobile} {
+        font-size: 18px;
+      }
     }
 
     ul li p {
       margin: 0;
       font-size: 28px;
       line-height: 1.3;
+
+      @media #{$mobile} {
+        font-size: 16px;
+      }
     }
   }
 }

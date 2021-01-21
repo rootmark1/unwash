@@ -3,13 +3,28 @@
 \* ------------------------------------------------------------ */
 
 .product-primary {
-  font-family: 'Gotham', arial, serif;
+  font-family: $font-gotham;
 
   .product__inner {
     display: flex;
     flex-flow: row wrap;
     padding: 78px 0;
     text-decoration: none;
+
+    @media #{$tablet-portrait} {
+      display: block;
+      padding: 60px 20px 0 20px;
+    }
+
+    @media #{$mobile} {
+      padding: 30px 10px 0 10px;
+    }
+  }
+
+  .product__head {
+    @media #{$tablet-portrait} {
+      text-align: center;
+    }
   }
 
   .product__media {
@@ -18,6 +33,23 @@
     width: 50%;
     padding-right: 48px;
     margin-bottom: 24px;
+
+    @media #{$small-desktop} {
+      padding-right: 20px;
+    }
+
+    @media #{$tablet-portrait} {
+      max-width: none;
+      width: auto;
+      padding-right: 0;
+      margin-bottom: 5px;
+    }
+  }
+
+  .product__thumbs {
+    @media #{$mobile} {
+      display: none;
+    }
   }
 
   .product__body {
@@ -26,16 +58,17 @@
     width: 50%;
     padding-left: 20px;
     margin-top: -7px;
+
+    @media #{$tablet-portrait} {
+      max-width: none;
+      width: auto;
+      margin-top: 0;
+      padding-left: 0;
+    }
   }
 
   .product__image {
     position: relative;
-  }
-
-  .product__thumbs {
-  }
-
-  .product__head {
   }
 
   .product__vendor {
@@ -45,6 +78,10 @@
     letter-spacing: 0.26em;
     color: #000;
     margin: 0;
+
+    @media #{$mobile} {
+      font-size: 14px;
+    }
   }
 
   .product__title {
@@ -55,6 +92,10 @@
     color: #000;
     margin: 0;
     line-height: 1;
+
+    @media #{$mobile} {
+      font-size: 20px;
+    }
   }
 
   .product__rating {
@@ -95,6 +136,10 @@
     line-height: 1.65;
     margin-bottom: 14px;
 
+    @media #{$mobile} {
+      font-size: 16px;
+    }
+
     * {
       font-weight: inherit !important;
     }
@@ -103,22 +148,44 @@
   .product__form {
     margin-bottom: 70px;
 
+    @media #{$mobile} {
+      margin-bottom: 32px;
+    }
+
     .ProductForm {
       margin: 0;
     }
 
     .form__body {
-      margin-bottom: 20px;
+      margin-bottom: 46px;
+
+      @media #{$mobile} {
+        margin-bottom: 25px;
+      }
     }
 
-    .ProductForm__Label,
+    .form__actions {
+      @media #{$tablet-portrait} {
+        text-align: center;
+      }
+    }
+
     .form__label {
       font-size: 19px;
       margin-bottom: 5px;
+      display: block;
+
+      @media #{$mobile} {
+        font-size: 15px;
+      }
     }
 
     .ProductForm__Option {
       margin-bottom: 16px;
+
+      @media #{$mobile} {
+        margin-bottom: 5px;
+      }
     }
 
     .QuantitySelector {
@@ -127,24 +194,33 @@
 
     .QuantitySelector__Button {
       padding: 5px 14px;
+
+      @media #{$mobile} {
+        padding: 2px 9px;
+      }
     }
 
     .QuantitySelector__CurrentQuantity {
       width: 57px;
       font-size: 16px;
+
+      @media #{$mobile} {
+        font-size: 12px;
+        width: 50px;
+      }
     }
 
     .form__row:not(:last-child) {
       margin-bottom: 20px;
     }
 
-    .ProductForm__Variants {
-      margin-bottom: 47px;
-    }
-
-    .ProductForm__Variants .SizeSwatch {
+    .SizeSwatch {
       font-size: 16px;
       padding: 4px 10px;
+
+      @media #{$mobile} {
+        font-size: 12px;
+      }
     }
 
     .HorizontalList--spacingTight {
@@ -158,16 +234,20 @@
     .Button.ProductForm__AddToCart,
     .form__btn {
       display: inline-block;
-      font-size: 17px;
-      letter-spacing: 0.22em;
-      padding: 21px 58px;
-      text-transform: uppercase;
-      color: #fff;
       background-color: #000;
-      display: inline-block;
+      padding: 21px 58px;
+      color: #fff;
       width: auto;
+      font-size: 17px;
       font-weight: 400;
       font-family: $font-gotham;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+
+      @media #{$mobile} {
+        font-size: 12px;
+        padding: 12px 32px;
+      }
 
       &:before {
         display: none;
@@ -182,6 +262,20 @@
   .product__badges {
     padding-right: 35px;
 
+    @media #{$small-desktop} {
+      padding-right: 0;
+    }
+
+    @media #{$tablet-portrait} {
+      margin-left: -40px;
+      margin-right: -40px;
+    }
+
+    @media #{$mobile} {
+      margin-left: -30px;
+      margin-right: -30px;
+    }
+
     ul {
       display: flex;
       flex-flow: row wrap;
@@ -193,6 +287,14 @@
       font-weight: 700;
       letter-spacing: 0.05em;
 
+      @media #{$small-desktop} {
+        font-size: 11px;
+      }
+
+      @media #{$mobile} {
+        letter-spacing: 0;
+      }
+
       li {
         flex: 0 0 50%;
         max-width: 50%;
@@ -200,6 +302,10 @@
         position: relative;
         padding: 17px 0;
         background-color: #96c5bc;
+
+        @media #{$mobile} {
+          padding: 15px 0;
+        }
 
         &:nth-child(4n),
         &:nth-child(4n-1) {

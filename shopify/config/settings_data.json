@@ -697,6 +697,7 @@
         "settings": {
           "title": "how to use",
           "bg_image": "shopify:\/\/shop_images\/Group-27.jpg",
+          "bg_image_mobile": "shopify:\/\/shop_images\/how-bg-image-mobile.jpg",
           "bg_color": "#98e8ff",
           "cta_text": "Shop Now",
           "cta_url": "\/"
@@ -791,10 +792,6 @@
           "decorations": true,
           "bg_color": "#98e8ff"
         }
-      },
-      "section-outro": {
-        "type": "section-outro",
-        "settings": {}
       },
       "pr-section": {
         "type": "pr-section",

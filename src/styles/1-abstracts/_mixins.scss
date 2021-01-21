@@ -11,6 +11,14 @@
 	line-height: 1.32;
 	color: #000;
 	font-family: $font-gotham;
+
+	@media #{$tablet-portrait} {
+		font-size: 40px;
+	}
+
+	@media #{$mobile} {
+		font-size: 25px;
+	}
 }
 
 @mixin section-button() {
@@ -28,6 +36,11 @@
 	font-size: 20px;
 	letter-spacing: 0.1em;
 	transition: background-color 0.3s;
+
+	@media #{$mobile} {
+		padding: 10px 20px;
+		font-size: 14px;
+	}
 
 	&:hover {
 		background-color: #333;

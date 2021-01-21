@@ -5,8 +5,20 @@
 .section-product-reviews {
   padding: 155px 0;
 
+  @media #{$tablet-portrait} {
+    padding: 60px 0;
+  }
+
+  @media #{$mobile} {
+    padding: 31px 0;
+  }
+
   .section__title {
     @include section-title(84px);
     text-align: center;
+
+    @media #{$tablet-portrait} {
+      margin-bottom: 0;
+    }
   }
 }

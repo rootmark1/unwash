@@ -11,6 +11,14 @@
   overflow: hidden;
   color: #000;
 
+  @media #{$tablet-portrait} {
+    padding: 60px 0;
+  }
+
+  @media #{$mobile} {
+    padding: 27px 0;
+  }
+
   .decoration {
     position: absolute;
     background-image: url(shape.png);
@@ -36,6 +44,15 @@
         left: -47.7vw;
         top: -8vw;
       }
+
+      @media #{$mobile} {
+        transform: rotate(181deg);
+        left: 205px;
+        top: -23px;
+        width: 464px;
+        height: 366px;
+        background-size: 464px 366px;
+      }
     }
 
     &.decoration--right {
@@ -46,10 +63,22 @@
         right: -47.4vw;
         bottom: -25vw;
       }
+
+      @media #{$mobile} {
+        display: none;
+      }
     }
   }
 
   .section__title {
     @include section-title(83px);
+
+    @media #{$tablet-portrait} {
+      margin-bottom: 30px;
+    }
+
+    @media #{$mobile} {
+      margin-bottom: 27px;
+    }
   }
 }

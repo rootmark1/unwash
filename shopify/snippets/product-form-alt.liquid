@@ -6,11 +6,11 @@ for size, we use it to display a size chart (if applicable)
 {%- assign selected_variant = product.selected_or_first_available_variant -%}
 
 {%- form 'product', product, class: 'ProductForm' -%}
-  <div class="ProductForm__Variants">
+  <div class="form__body">
     {%- unless product.has_only_default_variant -%}
       {%- for option in product.options_with_values -%}
         <div class="ProductForm__Option">
-          <span class="ProductForm__Label">
+          <span class="form__label">
             {{ option.name }}:
           </span>
                
@@ -40,30 +40,30 @@ for size, we use it to display a size chart (if applicable)
       <input type="hidden" name="id" data-sku="{{ selected_variant.sku }}" value="{{ selected_variant.id }}">
     {%- endunless -%}
 
-    <span class="ProductForm__Label">{{ 'product.form.quantity' | t }}:</span>
+    <span class="form__label">{{ 'product.form.quantity' | t }}:</span>
 
-    <div class="ProductForm__QuantitySelector">
-      <div class="QuantitySelector">
-        <span class="QuantitySelector__Button Link Link--secondary" data-action="decrease-quantity">{% render 'icon' with 'minus' %}</span>
-        <input type="text" class="QuantitySelector__CurrentQuantity" pattern="[0-9]*" name="quantity" value="1">
-        <span class="QuantitySelector__Button Link Link--secondary" data-action="increase-quantity">{% render 'icon' with 'plus' %}</span>
-      </div>
+    <div class="QuantitySelector">
+      <span class="QuantitySelector__Button Link Link--secondary" data-action="decrease-quantity">{% render 'icon' with 'minus' %}</span> 
+      <input type="text" class="QuantitySelector__CurrentQuantity" pattern="[0-9]*" name="quantity" value="1">
+      <span class="QuantitySelector__Button Link Link--secondary" data-action="increase-quantity">{% render 'icon' with 'plus' %}</span>
     </div>
-  </div>
+  </div><!-- /.form__body -->
 
   {%- comment -%}
   --------------------------------------------------------------------------------------------------------------------
   ADD TO CART BUTTON
   --------------------------------------------------------------------------------------------------------------------
   {%- endcomment -%}
-
-  <button type="submit" class="ProductForm__AddToCart Button Button--primary Button--full" {% if selected_variant.available %}data-action="add-to-cart"{% else %}disabled="disabled"{% endif %}>
-    {%- if selected_variant.available -%}
-      <span>{% if product.template_suffix == 'pre-order' %}{{ 'product.form.pre_order' | t }}{% else %}{{ 'product.form.add_to_cart' | t }}{% endif %}</span>
-    {%- else -%}
-      {{- 'product.form.sold_out' | t -}}
-    {%- endif -%}
-  </button>
+  
+  <div class="form__actions">
+    <button type="submit" class="ProductForm__AddToCart Button Button--primary Button--full" {% if selected_variant.available %}data-action="add-to-cart"{% else %}disabled="disabled"{% endif %}>
+      {%- if selected_variant.available -%}
+        <span>{% if product.template_suffix == 'pre-order' %}{{ 'product.form.pre_order' | t }}{% else %}{{ 'product.form.add_to_cart' | t }}{% endif %}</span>
+      {%- else -%}
+        {{- 'product.form.sold_out' | t -}}
+      {%- endif -%}
+    </button>
+  </div><!-- /.form__actions -->
 {%- endform -%}
 
 {% comment %}

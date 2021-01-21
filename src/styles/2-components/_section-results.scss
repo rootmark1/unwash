@@ -11,12 +11,24 @@
   color: #000;
   position: relative;
 
-  .section__inner {
+  @media #{$mobile} {
+    padding-top: 50px;
+    padding-bottom: 4px;
   }
 
   .section__head {
     font-size: 32px;
     margin-bottom: 80px;
+
+    @media #{$mobile} {
+      font-size: 18px;
+      margin-bottom: 43px;
+      text-decoration: none;
+    }
+
+    @media #{$mobile-small} {
+      margin-bottom: 81px;
+    }
 
     p {
       margin: 0;
@@ -30,6 +42,10 @@
 
   .section__body {
     padding: 0 66px;
+
+    @media #{$tablet-portrait} {
+      padding: 0;
+    }
   }
 
   .section__title {
