@@ -243,6 +243,11 @@
       font-family: $font-gotham;
       letter-spacing: 0.22em;
       text-transform: uppercase;
+      transition: all 0.3s;
+
+      &:hover {
+        opacity: 0.8;
+      }
 
       @media #{$mobile} {
         font-size: 12px;
