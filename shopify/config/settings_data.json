@@ -83,7 +83,7 @@
           "home_page_only": false,
           "background": "#000000",
           "text_color": "#ffffff",
-          "content": "GET FREE SHIPPING OVER $20",
+          "content": "Free Shipping Over $25",
           "link": "shopify:\/\/collections\/new"
         }
       },
@@ -159,56 +159,43 @@
       "slideshow": {
         "type": "slideshow",
         "blocks": {
-          "1591656981839": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/hero-slide-2_53c233a1-be7e-41bb-83f7-3759d2d4fbad.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/hero-slide-2-mob.jpg",
-              "apply_overlay": false,
-              "content_position": "middleLeft",
-              "subheading": "Anti-Residue Cleanse",
-              "title": "Lifts Away Build Up",
-              "button_1_text": "Shop Anti-Residue Cleanse",
-              "button_1_link": "shopify:\/\/products\/anti-residue-cleanse-travel-size",
-              "button_2_text": ""
-            }
-          },
           "1591659037196": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/hero-slide-3_3a7feade-edd5-4992-b20f-70ec5e2454b4.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/hero-slide-3-mob.jpg",
+              "image": "shopify:\/\/shop_images\/Unwash-Website_ImagesHome_Page_Slider_2.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Unwash-Website_ImagesmobileHome_Page_Slider_2.jpg",
               "apply_overlay": false,
-              "content_position": "middleLeft",
-              "subheading": "DRY CLEANSER",
-              "title": "absorbs oil for hair perfection",
-              "button_1_text": "Shop Dry Cleanser",
-              "button_1_link": "shopify:\/\/collections\/dry-cleanser",
+              "content_position": "middleRight",
+              "subheading": "save time, save water",
+              "title": "and protect your color",
+              "button_1_text": "Shop bio-cleansing conditioner",
+              "button_1_link": "shopify:\/\/products\/unwash-bio-cleansing-conditioner",
               "button_2_text": ""
             }
           },
           "1591659825856": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/hero-slide-4.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/hero-slide-4-mob.jpg",
+              "image": "shopify:\/\/shop_images\/Unwash-Website_ImagesHome_Page_Slider_3.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Unwash-Website_ImagesmobileHome_Page_Slider_3.jpg",
               "apply_overlay": false,
               "content_position": "middleLeft",
-              "subheading": "Hydrating Masque",
-              "title": "replenishes hair vitality",
-              "button_1_text": "Shop Hydrating Masque",
-              "button_1_link": "shopify:\/\/products\/unwash-hydrating-masque",
+              "subheading": "A reset button for your hair",
+              "title": "Lifts away build up",
+              "button_1_text": "Shop anti-residue cleanse",
+              "button_1_link": "shopify:\/\/products\/anti-residue-cleanse-travel-size",
               "button_2_text": ""
             }
           },
           "1591922207535": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/hero-slide-5.jpg",
+              "image": "shopify:\/\/shop_images\/Unwash-Website_ImagesHome_Page_Slider_5.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Unwash-Website_ImagesmobileHome_Page_Slider_5.jpg",
               "apply_overlay": false,
               "content_position": "middleLeft",
-              "subheading": "Detox Scalp Scrub",
-              "title": "Detoxifies,  Exfoliates, and Hydrates",
+              "subheading": "exfoliate while removing build up",
+              "title": "fight flakes and rebalance your scalp",
               "button_1_text": "Shop Charcoal Scrub",
               "button_1_link": "shopify:\/\/products\/charcoal-detox-scalp-scrub",
               "button_2_text": ""
@@ -217,24 +204,37 @@
           "1591922100990": {
             "type": "image",
             "settings": {
-              "image": "shopify:\/\/shop_images\/hero-slide-1_bbb56418-84f7-4709-bfc5-8b8500edf0b1.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/hero-slide-1-mob_c2b192e8-8d05-402c-bce4-8daa629d28ad.jpg",
+              "image": "shopify:\/\/shop_images\/Unwash-Website_ImagesHome_Page_Slider_4.jpg",
               "apply_overlay": false,
               "content_position": "middleLeft",
-              "subheading": "The Unconventional Way to a Good Hair Day",
-              "title": "BIO-CLEANSING CONDITIONER",
-              "button_1_text": "Shop Holiday bundle",
-              "button_1_link": "shopify:\/\/products\/holiday-bundle",
+              "subheading": "second day hair don't care",
+              "title": "lightweight and absorbs oil",
+              "button_1_text": "Shop dry cleanser",
+              "button_1_link": "shopify:\/\/products\/unwash-dry-cleanser",
+              "button_2_text": ""
+            }
+          },
+          "1591656981839": {
+            "type": "image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/Unwash-Website_ImagesdesktopHome_Page_Slider_6.jpg",
+              "mobile_image": "shopify:\/\/shop_images\/Unwash-Website_ImagesmobileHome_Page_Slider_6.jpg",
+              "apply_overlay": false,
+              "content_position": "middleCenter",
+              "subheading": "Restores natural oils leaving hair",
+              "title": "smooth, shiny and voluminous",
+              "button_1_text": "shop overnight hair masque",
+              "button_1_link": "shopify:\/\/products\/overnight-hair-masque",
               "button_2_text": ""
             }
           }
         },
         "block_order": [
-          "1591656981839",
           "1591659037196",
           "1591659825856",
           "1591922207535",
-          "1591922100990"
+          "1591922100990",
+          "1591656981839"
         ],
         "settings": {
           "show_fullscreen": false,
@@ -567,235 +567,6 @@
           "reviews_enabled": false,
           "featured_image_size": "large"
         }
-      },
-      "section-results": {
-        "type": "section-results",
-        "blocks": {
-          "9803f46c-ac38-457a-9c6f-73b5a2664dea": {
-            "type": "entry",
-            "settings": {
-              "image_before": "shopify:\/\/shop_images\/Group-21.png",
-              "image_after": "shopify:\/\/shop_images\/Group-22.png"
-            }
-          },
-          "78757375-b113-4846-b904-66b90076726c": {
-            "type": "entry",
-            "settings": {
-              "image_before": "shopify:\/\/shop_images\/Group-23.png",
-              "image_after": "shopify:\/\/shop_images\/Group-24.png"
-            }
-          },
-          "e3d8aab1-bf51-42e4-aea2-085f1d8e6720": {
-            "type": "entry",
-            "settings": {
-              "image_before": "shopify:\/\/shop_images\/Group-25.png",
-              "image_after": "shopify:\/\/shop_images\/Group-26.png"
-            }
-          },
-          "b2e07c00-b90e-4867-b6c0-564e33dd95d0": {
-            "type": "entry",
-            "settings": {
-              "image_before": "shopify:\/\/shop_images\/Group-27.png",
-              "image_after": "shopify:\/\/shop_images\/Group-28.png"
-            }
-          }
-        },
-        "block_order": [
-          "9803f46c-ac38-457a-9c6f-73b5a2664dea",
-          "78757375-b113-4846-b904-66b90076726c",
-          "e3d8aab1-bf51-42e4-aea2-085f1d8e6720",
-          "b2e07c00-b90e-4867-b6c0-564e33dd95d0"
-        ],
-        "settings": {
-          "title": "Results you can see",
-          "content": "The images below are the before and after results of women who are using the Bio-Cleansing Conditioner for just one week every other day.",
-          "cta_text": "Shop Now",
-          "cta_url": "\/"
-        }
-      },
-      "section-ingredients": {
-        "type": "section-ingredients",
-        "blocks": {
-          "71e41d0e-8443-494f-bd38-4d8b49cb9a9c": {
-            "type": "ingredient",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/pawel-czerwinski-fOXvuWswMDs-unsplash.png",
-              "title": "Cationic Cleansers",
-              "content": "Removes unwanted dirt and oil\nwithout disrupting the cuticle."
-            }
-          },
-          "56f96bb3-cd5e-4abf-b090-f6e6bd8523ab": {
-            "type": "ingredient",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/canvast-supply-co-s2MsMl4KX5c-unsplash.png",
-              "title": "Hemp Seed Oil",
-              "content": "Helps strengthen hair and stimulate \ngrowth preventing water loss to \nprotect your hair."
-            }
-          },
-          "5f682671-2125-4e41-8401-8636f194a97c": {
-            "type": "ingredient",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/paul-siewert-dnpa8k6TGRE-unsplash.png",
-              "title": "Hydrolyzed Keratin",
-              "content": "Strengthens the hair, seals in \nmoisture and nutrients to smooth \nthe hair cuticle, reducing frizz and \nadding shine."
-            }
-          },
-          "4776eb2c-2ef2-46ae-ab0d-6f6b46f489fe": {
-            "type": "ingredient",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/henry-perks-Q67Cx_7AO8U-unsplash.png",
-              "title": "Organic Evening Primrose Oil",
-              "content": "Nourishes the hair and scalp,\nincreasing hydration and\nshine in the hair."
-            }
-          }
-        },
-        "block_order": [
-          "71e41d0e-8443-494f-bd38-4d8b49cb9a9c",
-          "56f96bb3-cd5e-4abf-b090-f6e6bd8523ab",
-          "5f682671-2125-4e41-8401-8636f194a97c",
-          "4776eb2c-2ef2-46ae-ab0d-6f6b46f489fe"
-        ],
-        "settings": {
-          "title": "Hair Loving\nIngredients",
-          "decorations": true
-        }
-      },
-      "section-how": {
-        "type": "section-how",
-        "blocks": {
-          "190d2af2-b46b-44e7-9d71-54fc46208c91": {
-            "type": "item",
-            "settings": {
-              "text": "Thoroughly wet your hair to allow the product to saturate evenly. Gather a quarter-sized amount for short hair or 2 to 3x more for thicker, longer hair."
-            }
-          },
-          "b0dedb7f-1fdc-422d-ae1b-379ff81ce3c9": {
-            "type": "item",
-            "settings": {
-              "text": "Apply the product from roots through to the ends. Massage into areas with excess build-up and oil."
-            }
-          },
-          "8b0188cd-67a3-4a1b-8942-750f370cdad5": {
-            "type": "item",
-            "settings": {
-              "text": "Rinse thoroughly, allow hair to air dry, or begin blow-drying."
-            }
-          },
-          "09348f14-da9d-46d7-909a-b304782e87c3": {
-            "type": "item",
-            "settings": {
-              "text": "Thoroughly wet your hair to allow the product to saturate evenly. Gather a quarter-sized amount for short hair or 2 to 3x more for thicker, longer hair."
-            }
-          }
-        },
-        "block_order": [
-          "190d2af2-b46b-44e7-9d71-54fc46208c91",
-          "b0dedb7f-1fdc-422d-ae1b-379ff81ce3c9",
-          "8b0188cd-67a3-4a1b-8942-750f370cdad5",
-          "09348f14-da9d-46d7-909a-b304782e87c3"
-        ],
-        "settings": {
-          "title": "how to use",
-          "bg_image": "shopify:\/\/shop_images\/Group-27.jpg",
-          "bg_image_mobile": "shopify:\/\/shop_images\/how-bg-image-mobile.jpg",
-          "bg_color": "#98e8ff",
-          "cta_text": "Shop Now",
-          "cta_url": "\/"
-        }
-      },
-      "section-partners": {
-        "type": "section-partners",
-        "blocks": {
-          "dce27aa7-8855-49c4-a294-f037cd778f21": {
-            "type": "partner",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/glamour.png"
-            }
-          },
-          "d6c2c03e-38ad-4d2a-813c-17500d8678f7": {
-            "type": "partner",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/us-weekly-magazine.png"
-            }
-          },
-          "cfdfd45d-6df9-4ffb-b252-4b925bb2e265": {
-            "type": "partner",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/allure_7f3dc037-b7c0-468e-876e-c947e7bca10e.png"
-            }
-          },
-          "384e1c10-bd78-4047-b6d0-a95b4a36faab": {
-            "type": "partner",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/into-the-gloss.png"
-            }
-          }
-        },
-        "block_order": [
-          "dce27aa7-8855-49c4-a294-f037cd778f21",
-          "d6c2c03e-38ad-4d2a-813c-17500d8678f7",
-          "cfdfd45d-6df9-4ffb-b252-4b925bb2e265",
-          "384e1c10-bd78-4047-b6d0-a95b4a36faab"
-        ],
-        "settings": {
-          "title": "As seen in"
-        }
-      },
-      "section-faq": {
-        "type": "section-faq",
-        "blocks": {
-          "18c836f9-e539-4725-99fb-efe4ecb2a24c": {
-            "type": "item",
-            "settings": {
-              "question": "Is this color safe?",
-              "answer": "Yes, and will preserve your color, too."
-            }
-          },
-          "464c04ea-5e9d-4f02-917e-38263b66c1d4": {
-            "type": "item",
-            "settings": {
-              "question": "Will this work on fine hair?",
-              "answer": "Yes, and great for all hair types."
-            }
-          },
-          "3b9ac20d-c94b-438a-8187-f50064d47c3f": {
-            "type": "item",
-            "settings": {
-              "question": "Can I use it with a keratin treatment?",
-              "answer": "Yes, that is the beauty (no pun intended) of this unique cleansing conditioner. It is fabulous for all hair\ntypes and treatments."
-            }
-          },
-          "7c34175d-f7c9-4a64-b1b9-ddc5c3891e2c": {
-            "type": "item",
-            "settings": {
-              "question": "Cruelty-free?",
-              "answer": "Yes, and free of sulfate detergents and parabens that \nstrip of natural oils."
-            }
-          },
-          "92d9a3df-574d-431e-b4c6-6ae8febba9eb": {
-            "type": "item",
-            "settings": {
-              "question": "How do you get the best results?",
-              "answer": "Less is more. Apply to very wet hair, scrub well, and add water during the application to ensure even spreading.\nRinse thoroughly."
-            }
-          }
-        },
-        "block_order": [
-          "18c836f9-e539-4725-99fb-efe4ecb2a24c",
-          "464c04ea-5e9d-4f02-917e-38263b66c1d4",
-          "3b9ac20d-c94b-438a-8187-f50064d47c3f",
-          "7c34175d-f7c9-4a64-b1b9-ddc5c3891e2c",
-          "92d9a3df-574d-431e-b4c6-6ae8febba9eb"
-        ],
-        "settings": {
-          "title": "FAQs",
-          "decorations": true,
-          "bg_color": "#98e8ff"
-        }
-      },
-      "pr-section": {
-        "type": "pr-section",
-        "settings": {}
       }
     },
     "content_for_index": [
