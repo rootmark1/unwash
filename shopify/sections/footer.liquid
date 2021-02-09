@@ -8,11 +8,12 @@
   {%- assign add_top_margin = false -%}
 {%- endif -%}
 
-
-<div class="site-footer-item">
-  <style>.fs-has-links::after {  padding:  5px 7.5px; border: 1px solid #fff; color:#fff;}.fs-has-links:hover:after { background-color: #fff; color: rgba(56, 63, 60, 0.8)}.fs-desktop .fs-entry-container { width: 16.666666666666668% !important; padding-top: 16.666666666666668% !important; }.fs-mobile .fs-entry-container { width: 50% !important; padding-top: 50% !important; }.fs-wrapper div.fs-text-container .fs-entry-title, div.fs-detail-title{font-family:Times New Roman, serif;font-style:italic;font-weight:normal;}div.fs-text-container .fs-entry-date, div.fs-detail-container .fs-post-info, div.fs-wrapper div.fs-has-links::after, .fs-text-product, .fs-overlink-text{font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-style:normal;font-weight:bold;}.fs-wrapper div.fs-text-container * {color:#fff}.fs-wrapper div.fs-text-container {background-color:rgba(56, 63, 60, 0.8); margin: 0px}div.fs-entry-date{display:none}div.fs-entry-title{display:none}.fs-wrapper div.fs-timeline-entry{ margin: 1px }</style>
-  <script src="//foursixty.com/media/scripts/fs.embed.v2.5.js" data-feed-id="unwash" data-open-links-in-same-page="false" data-theme="showcase_v2_5" data-page-size="12"></script>
-</div>
+{%- unless template == 'product.alt' -%}
+  <div class="site-footer-item">
+    <style>.fs-has-links::after {  padding:  5px 7.5px; border: 1px solid #fff; color:#fff;}.fs-has-links:hover:after { background-color: #fff; color: rgba(56, 63, 60, 0.8)}.fs-desktop .fs-entry-container { width: 16.666666666666668% !important; padding-top: 16.666666666666668% !important; }.fs-mobile .fs-entry-container { width: 50% !important; padding-top: 50% !important; }.fs-wrapper div.fs-text-container .fs-entry-title, div.fs-detail-title{font-family:Times New Roman, serif;font-style:italic;font-weight:normal;}div.fs-text-container .fs-entry-date, div.fs-detail-container .fs-post-info, div.fs-wrapper div.fs-has-links::after, .fs-text-product, .fs-overlink-text{font-family:Helvetica Neue, Helvetica, Arial, sans-serif;font-style:normal;font-weight:bold;}.fs-wrapper div.fs-text-container * {color:#fff}.fs-wrapper div.fs-text-container {background-color:rgba(56, 63, 60, 0.8); margin: 0px}div.fs-entry-date{display:none}div.fs-entry-title{display:none}.fs-wrapper div.fs-timeline-entry{ margin: 1px }</style>
+    <script src="//foursixty.com/media/scripts/fs.embed.v2.5.js" data-feed-id="unwash" data-open-links-in-same-page="false" data-theme="showcase_v2_5" data-page-size="12"></script>
+  </div>
+{%- endunless -%}
 
 <footer id="section-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="footer" class="Footer {% if section.blocks.size <= 2 %}Footer--center{% endif %} {% if add_top_margin %}Footer--withMargin{% endif %}" role="contentinfo">
   <div class="Container">
