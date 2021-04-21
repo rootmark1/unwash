@@ -71,7 +71,7 @@
       "sidebar-menu": {
         "type": "sidebar-menu",
         "settings": {
-          "primary_menu": "new-main-menu",
+          "primary_menu": "mobile-main-menu",
           "secondary_menu": "secondary-main-menu",
           "show_social_media": true
         }
@@ -426,7 +426,7 @@
           "subheading": "",
           "title": "Why Unwash?",
           "image": "shopify:\/\/shop_images\/Untitled_design_5_6b7b3ee1-0479-46d8-aad4-fd3565ea7801.png",
-          "video_url": "https:\/\/www.youtube.com\/watch?v=8amCV_BIt4M"
+          "video_url": "https:\/\/vimeo.com\/535941411"
         }
       },
       "1591219130821": {
@@ -566,6 +566,234 @@
           "metafield-tabs": true,
           "reviews_enabled": false,
           "featured_image_size": "large"
+        }
+      },
+      "pr-section": {
+        "type": "pr-section",
+        "settings": {}
+      },
+      "section-results": {
+        "type": "section-results",
+        "blocks": {
+          "d44fdcf2-013d-4908-99d3-06a9b632052c": {
+            "type": "entry",
+            "settings": {
+              "image_before": "shopify:\/\/shop_images\/Group-21_548x_000d0932-fd52-40bb-9adb-456f9b9c2710.png",
+              "image_after": "shopify:\/\/shop_images\/Group-22_548x_a9305ce3-589c-4463-80bc-d8926819c837.png"
+            }
+          },
+          "c6075e10-d0fa-4be7-b28a-232913d88795": {
+            "type": "entry",
+            "settings": {
+              "image_before": "shopify:\/\/shop_images\/Group-23_548x_858eed64-fa2e-46f1-9fc2-3d269e40b8d6.png",
+              "image_after": "shopify:\/\/shop_images\/Group-24_548x_7f9ad5b6-d42b-48c4-ab28-038604d1c87e.png"
+            }
+          },
+          "b447be15-8258-494b-8757-266efa52c594": {
+            "type": "entry",
+            "settings": {
+              "image_before": "shopify:\/\/shop_images\/Group-25_548x_7d15f980-03a5-43a0-a8c3-59b08ea63b01.png",
+              "image_after": "shopify:\/\/shop_images\/Group-24_548x_d203f20f-81d2-4590-9988-e3619c3d9453.png"
+            }
+          },
+          "f01d606b-a8d7-4eeb-88f8-6ef953258054": {
+            "type": "entry",
+            "settings": {
+              "image_before": "shopify:\/\/shop_images\/Group-27_548x_269124e9-a4be-49b8-a7de-102234607228.png",
+              "image_after": "shopify:\/\/shop_images\/Group-28_548x_bbf6bd77-1224-405c-a98c-36e6ba29ea47.png"
+            }
+          }
+        },
+        "block_order": [
+          "d44fdcf2-013d-4908-99d3-06a9b632052c",
+          "c6075e10-d0fa-4be7-b28a-232913d88795",
+          "b447be15-8258-494b-8757-266efa52c594",
+          "f01d606b-a8d7-4eeb-88f8-6ef953258054"
+        ],
+        "settings": {
+          "title": "RESULTS YOU CAN SEE",
+          "content": "The images below are the before and after results of women who are using the Bio-Cleansing Conditioner for just one week every other day.",
+          "cta_text": "Shop now",
+          "cta_url": "\/"
+        }
+      },
+      "section-ingredients": {
+        "type": "section-ingredients",
+        "blocks": {
+          "5a994f05-35fc-464b-958b-d7050a7ba900": {
+            "type": "ingredient",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/pawel-czerwinski-fOXvuWswMDs-unsplash_200x_69067908-6a2b-4d02-aa2a-5fe390e632ed.png",
+              "title": "Cationic Cleansers",
+              "content": "Removes unwanted dirt and oil\nwithout disrupting the cuticle."
+            }
+          },
+          "6f4abeac-b21a-4357-b186-97d9010e3cff": {
+            "type": "ingredient",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/canvast-supply-co-s2MsMl4KX5c-unsplash_200x_3ed6964b-9f18-4fa4-8fc4-50c3337cb478.png",
+              "title": "Hemp Seed Oil",
+              "content": "Helps strengthen hair and stimulate \ngrowth preventing water loss to \nprotect your hair."
+            }
+          },
+          "04c44c43-62cb-448e-9163-210763bbdfce": {
+            "type": "ingredient",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/paul-siewert-dnpa8k6TGRE-unsplash_200x_d1d0150a-044e-4653-aedd-6d63b656ebdb.png",
+              "title": "Hydrolyzed Keratin",
+              "content": "Strengthens the hair, seals in \nmoisture and nutrients to smooth \nthe hair cuticle, reducing frizz and \nadding shine."
+            }
+          },
+          "45b182b6-f627-41ec-a6f1-a208825849a8": {
+            "type": "ingredient",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/henry-perks-Q67Cx_7AO8U-unsplash_200x_4cfd134b-6107-471d-aa84-98f8c2d6763a.png",
+              "title": "Organic Evening Primrose Oil",
+              "content": "Nourishes the hair and scalp,\nincreasing hydration and\nshine in the hair."
+            }
+          }
+        },
+        "block_order": [
+          "5a994f05-35fc-464b-958b-d7050a7ba900",
+          "6f4abeac-b21a-4357-b186-97d9010e3cff",
+          "04c44c43-62cb-448e-9163-210763bbdfce",
+          "45b182b6-f627-41ec-a6f1-a208825849a8"
+        ],
+        "settings": {
+          "title": "Hair Loving\nIngredients",
+          "decorations": true
+        }
+      },
+      "section-how": {
+        "type": "section-how",
+        "blocks": {
+          "99d4eb08-3b49-49d7-a874-4a6d3e0b57fa": {
+            "type": "item",
+            "settings": {
+              "text": "Thoroughly wet your hair to allow the product to saturate evenly. Gather a quarter-sized amount for short hair or 2 to 3x more for thicker, longer hair."
+            }
+          },
+          "31d2e06a-7c35-4761-8cbe-f949ed582aec": {
+            "type": "item",
+            "settings": {
+              "text": "Apply the product from roots through to the ends. Massage into areas with excess build-up and oil."
+            }
+          },
+          "9bc1cf70-8be8-46aa-a85e-2e53f8eb6f2c": {
+            "type": "item",
+            "settings": {
+              "text": "Rinse thoroughly, allow hair to air dry, or begin blow-drying."
+            }
+          },
+          "9804e8df-5b58-4303-9870-cfae7787c66e": {
+            "type": "item",
+            "settings": {
+              "text": "Thoroughly wet your hair to allow the product to saturate evenly. Gather a quarter-sized amount for short hair or 2 to 3x more for thicker, longer hair."
+            }
+          }
+        },
+        "block_order": [
+          "99d4eb08-3b49-49d7-a874-4a6d3e0b57fa",
+          "31d2e06a-7c35-4761-8cbe-f949ed582aec",
+          "9bc1cf70-8be8-46aa-a85e-2e53f8eb6f2c",
+          "9804e8df-5b58-4303-9870-cfae7787c66e"
+        ],
+        "settings": {
+          "title": "how to use",
+          "bg_image": "shopify:\/\/shop_images\/Group-27_1900x_33e85865-9851-446f-8f1a-957915d957b1.jpg",
+          "bg_image_mobile": "shopify:\/\/shop_images\/how-bg-image-mobile_1900x_2e81070c-7d54-4d4d-ae0a-ffc2f55fc25b.jpg",
+          "bg_color": "#98e8ff",
+          "cta_text": "Shop Now"
+        }
+      },
+      "section-partners": {
+        "type": "section-partners",
+        "blocks": {
+          "2f382e78-b377-4fdb-b41f-fc1dfa6992e8": {
+            "type": "partner",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/glamour_500x_114b6956-7db6-4ae3-8ef1-e09b10465a3f.png"
+            }
+          },
+          "bbae40c3-0867-46b7-aea1-4798be9ee1a4": {
+            "type": "partner",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/us-weekly-magazine_500x_415232c7-0a94-476d-a99a-b2f4bef5847a.png"
+            }
+          },
+          "e5de3a0e-5610-4736-bcb2-b150e5629d44": {
+            "type": "partner",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/allure_500x_de440664-9957-4f02-990b-52dbb4bd9c2e.png"
+            }
+          },
+          "5ce09906-8a6b-4489-bc25-a195fa2c38bf": {
+            "type": "partner",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/into-the-gloss_500x_401a68a0-6891-49ea-9980-61e2917bc99d.png"
+            }
+          }
+        },
+        "block_order": [
+          "2f382e78-b377-4fdb-b41f-fc1dfa6992e8",
+          "bbae40c3-0867-46b7-aea1-4798be9ee1a4",
+          "e5de3a0e-5610-4736-bcb2-b150e5629d44",
+          "5ce09906-8a6b-4489-bc25-a195fa2c38bf"
+        ],
+        "settings": {
+          "title": "As seen in"
+        }
+      },
+      "section-faq": {
+        "type": "section-faq",
+        "blocks": {
+          "c6f97a49-f12d-430b-9bae-a4d6aca50ffb": {
+            "type": "item",
+            "settings": {
+              "question": "Is this color safe?",
+              "answer": "Yes, and will preserve your color, too."
+            }
+          },
+          "ad367099-dac2-4164-8619-eec10c104b32": {
+            "type": "item",
+            "settings": {
+              "question": "Will this work on fine hair?",
+              "answer": "Yes, and great for all hair types."
+            }
+          },
+          "9ce36dae-1a37-4354-8c40-d8f6b29e7321": {
+            "type": "item",
+            "settings": {
+              "question": "Can I use it with a keratin treatment?",
+              "answer": "Yes, that is the beauty (no pun intended) of this unique cleansing conditioner. It is fabulous for all hair\ntypes and treatments."
+            }
+          },
+          "b04260ef-f209-477d-8284-3f94bb49b6af": {
+            "type": "item",
+            "settings": {
+              "question": "Cruelty-free?",
+              "answer": "Yes, and free of sulfate detergents and parabens that \nstrip of natural oils."
+            }
+          },
+          "222ec735-5286-4277-aba7-f0ba20e233a5": {
+            "type": "item",
+            "settings": {
+              "question": "How do you get the best results?",
+              "answer": "Less is more. Apply to very wet hair, scrub well, and add water during the application to ensure even spreading.\nRinse thoroughly."
+            }
+          }
+        },
+        "block_order": [
+          "c6f97a49-f12d-430b-9bae-a4d6aca50ffb",
+          "ad367099-dac2-4164-8619-eec10c104b32",
+          "9ce36dae-1a37-4354-8c40-d8f6b29e7321",
+          "b04260ef-f209-477d-8284-3f94bb49b6af",
+          "222ec735-5286-4277-aba7-f0ba20e233a5"
+        ],
+        "settings": {
+          "title": "FAQs",
+          "decorations": true,
+          "bg_color": "#98e8ff"
         }
       }
     },
