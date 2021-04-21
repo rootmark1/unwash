@@ -1,0 +1,46 @@
+{%- assign section_title = product.metafields.accentuate.title -%}
+{%- assign section_content = product.metafields.accentuate.content -%}
+{%- assign section_cta_text = product.metafields.accentuate.button -%}
+{%- assign section_cta_url = product.metafields.accentuate.button_url -%}
+
+<section class="section-results">
+  <div class="shell">
+    <div class="section__inner">
+      <header class="section__head">
+        {%- if section_title != blank -%}
+          <h2 class="section__title">{{ section_title }}</h2><!-- /.section__title -->
+        {%- endif -%}
+
+        {%- if section_content != blank -%}
+          {{ section_content.html }}
+        {%- endif -%}
+      </header><!-- /.section__head -->
+
+      <div class="section__body">
+        <ul class="list-results">
+          {%- for block in product.metafields.accentuate.images -%}
+            {% capture thecycle %}{% cycle 'odd', 'even' %}{% endcapture %}
+
+            {% if thecycle == 'odd' %}
+              <li>
+            {% endif %}
+
+            {%- if block != blank -%}
+              <img src="{{ block.src }}" alt="{{ block.alt }}" />
+            {%- endif -%}
+
+            {% if thecycle == 'even' or forloop.last == true %}
+              </li>
+            {% endif %}
+          {%- endfor -%}
+        </ul><!-- /.list-results -->
+      </div><!-- /.section__body -->
+
+      {%- if section_cta_text != blank and section_cta_url != blank -%}
+        <div class="section__actions">
+          <a href="{{ section_cta_url }}" class="btn">{{ section_cta_text }}</a>
+        </div><!-- /.section__actions -->
+      {%- endif -%}
+    </div><!-- /.section__inner -->
+  </div><!-- /.shell -->
+</section><!-- /.section-results -->

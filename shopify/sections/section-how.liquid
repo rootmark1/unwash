@@ -11,30 +11,30 @@
   {%- if section_bg_image != blank -%}
     <div class="section__image {% if section_bg_image_mobile != blank %}section__image--desktop{% endif %}" style="background-image: url({{ section_bg_image | img_url: '1900x' }});"></div><!-- /.section__image -->
   {%- endif -%}
-  
+
   {%- if section_bg_image_mobile != blank -%}
     <div class="section__image section__image--mobile" style="background-image: url({{ section_bg_image_mobile | img_url: '1900x' }});"></div><!-- /.section__image -->
   {%- endif -%}
-  
+
   <div class="shell">
-    <div class="section__inner">    
+    <div class="section__inner">
       <div class="section__body">
         {%- if section_title != blank -%}
           <h2 class="section__title">{{ section_title }}</h2><!-- /.section__title -->
         {%- endif -%}
-        
+
         <ol class="list-how">
           {%- for block in section.blocks -%}
             {%- assign _block = block.settings -%}
             {%- assign block_text = _block.text -%}
-            
+
             <li>
               <p>{{ block_text | newline_to_br }}</p>
             </li>
-          {%- endfor -%}          
+          {%- endfor -%}
         </ol><!-- /.list-how -->
       </div><!-- /.section__body -->
-      
+
       {%- if section_cta_text != blank and section_cta_url != blank -%}
         <div class="section__actions">
           <a href="{{ section_cta_url }}" class="btn">{{ section_cta_text }}</a>
@@ -43,7 +43,6 @@
     </div><!-- /.section__inner -->
   </div><!-- /.shell -->
 </section><!-- /.section-how -->
-
 
 {% schema %}
 {

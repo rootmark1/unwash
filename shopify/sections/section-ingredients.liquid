@@ -7,13 +7,13 @@
     <span class="decoration decoration--left"></span>
     <span class="decoration decoration--right"></span>
   {% endif %}
-  
+
   <div class="shell">
     <div class="section__inner">
       {%- if section_title != blank -%}
         <h2 class="section__title">{{ section_title | newline_to_br }}</h2><!-- /.section__title -->
       {%- endif -%}
-      
+
       <div class="section__body">
         <ul>
           {%- for block in section.blocks -%}
@@ -21,16 +21,16 @@
             {%- assign block_image = _block.image -%}
             {%- assign block_title = _block.title -%}
             {%- assign block_content = _block.content -%}
-            
+
             <li>
               {%- if block_image != blank -%}
                 <img src="{{ block_image | img_url: '200x' }}" alt="{{ block_image.alt }}" />
               {%- endif -%}
-              
+
               {%- if block_title != blank -%}
                 <h4>{{ block_title}}</h4>
               {%- endif -%}
-              
+
               {%- if block_content != blank -%}
                 <p>{{ block_content | newline_to_br }}</p>
               {%- endif -%}

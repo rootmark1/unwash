@@ -1,0 +1,39 @@
+{%- assign section_title = product.metafields.section_title.title -%}
+{%- assign section_decorations = product.metafields.accentuate.show_decorations -%}
+{%- assign section_bg_color = product.metafields.background_color.background_color -%}
+
+<section class="section-faq" style="background-color: {{ section_bg_color }};">
+  {%- if section_decorations -%}
+    <span class="decoration decoration--left"></span>
+    <span class="decoration decoration--right"></span>
+  {%- endif -%}
+
+  <div class="shell">
+    <div class="section__inner">
+      {%- if section_title != blank -%}
+        <h2 class="section__title">{{ section_title }}</h2><!-- /.section__title -->
+      {%- endif -%}
+
+      <div class="section__body">
+        <ul class="list-faq">
+          {%- for block in  product.metafields.accentuate.question_title -%}
+            {%- assign block_question = product.metafields.accentuate.question_title[forloop.index0] -%}
+            {%- assign block_answer = product.metafields.accentuate.question_content[forloop.index0].html -%}
+
+            {% if block_question != blank or block_answer != blank %}
+              <li>
+                {% if block_question != blank %}
+                  <h3>{{ block_question }}</h3>
+                {% endif %}
+
+                {% if block_answer != blank %}
+                  <p>{{ block_answer | newline_to_br }}</p>
+                {% endif %}
+              </li>
+            {% endif %}
+          {%- endfor -%}
+        </ul><!-- /.list-faq -->
+      </div><!-- /.section__body -->
+    </div><!-- /.section__inner -->
+  </div><!-- /.shell -->
+</section><!-- /.section-faq -->

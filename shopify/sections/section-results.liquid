@@ -1,7 +1,8 @@
-{%- assign section_title = product.metafields.accentuate.title -%}
-{%- assign section_content = product.metafields.accentuate.content -%}
-{%- assign section_cta_text = product.metafields.accentuate.button -%}
-{%- assign section_cta_url = product.metafields.accentuate.button_url -%}
+{%- assign _section = section.settings -%}
+{%- assign section_title = _section.title -%}
+{%- assign section_content = _section.content -%}
+{%- assign section_cta_text = _section.cta_text -%}
+{%- assign section_cta_url = _section.cta_url -%}
 
 <section class="section-results">
   <div class="shell">
@@ -12,21 +13,24 @@
         {%- endif -%}
 
         {%- if section_content != blank -%}
-          {{ section_content.html }}
+          <p>{{ section_content }}</p>
         {%- endif -%}
       </header><!-- /.section__head -->
 
       <div class="section__body">
         <ul class="list-results">
-          {%- for block in product.metafields.accentuate.images -%}
+          {%- for block in section.blocks -%}
+            {%- assign _block = block.settings -%}
+            {%- assign block_image_before = _block.image_before -%}
+            {%- assign block_image_after = _block.image_after -%}
+
             <li>
+              {%- if block_image_before != blank -%}
+                <img src="{{ block_image_before | img_url: '548x' }}" alt="{{ block_image_before.alt }}" />
+              {%- endif -%}
 
-              <script>
-                console.log({{ block | json }});
-              </script>
-
-              {%- if block != blank -%}
-                <img src="{{ block.src | img_url: '548x' }}" alt="{{ block.alt }}" />
+              {%- if block_image_after != blank -%}
+                <img src="{{ block_image_after | img_url: '548x' }}" alt="{{ block_image_after.alt }}" />
               {%- endif -%}
             </li>
           {%- endfor -%}
