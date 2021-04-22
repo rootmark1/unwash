@@ -31,6 +31,15 @@ $('.slider-thumbs .js-thumbs').slick({
 $('.js-radio-variant').on('change', function(event) {
   const $this   = $(this);
   const val     = $this.data('name');
-  
+
   $('.product-single__variants option[data-variantname="'+val+'"]').prop('selected', true)
 });
+
+$('.js-section-order').each(function() {
+  const $this = $(this);
+  const number = $this.data('order');
+
+  if (number) {
+    $this.closest('.product__item').addClass('order-' + number);
+  }
+})

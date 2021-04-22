@@ -1,0 +1,24 @@
+/* ------------------------------------------------------------ *\
+  images
+\* ------------------------------------------------------------ */
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -10px;
+
+  @media #{$mobile} {
+    display: block;
+  }
+
+  .images__item {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    padding: 0 10px;
+
+    @media #{$mobile} {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+}

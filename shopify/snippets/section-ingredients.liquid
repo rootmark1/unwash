@@ -1,41 +1,44 @@
 {%- assign section_title = product.metafields.section_title.section_title -%}
 {%- assign section_decorations = product.metafields.show_decorations.show_decorations -%}
+{% assign order = product.metafields.accentuate.order_ingredients %}
 
-<section class="section-ingredients">
-  {% if section_decorations %}
-    <span class="decoration decoration--left"></span>
-    <span class="decoration decoration--right"></span>
-  {% endif %}
+{% if section_title != blank or product.metafields.accentuate.image != blank %}
+  <section class="section-ingredients js-section-order" {% if order != blank %}data-order="{{ order }}"{% endif %}>
+    {% if section_decorations %}
+      <span class="decoration decoration--left"></span>
+      <span class="decoration decoration--right"></span>
+    {% endif %}
 
-  <div class="shell">
-    <div class="section__inner">
-      {%- if section_title != blank -%}
-        <h2 class="section__title">{{ section_title | newline_to_br }}</h2><!-- /.section__title -->
-      {%- endif -%}
+    <div class="shell">
+      <div class="section__inner">
+        {%- if section_title != blank -%}
+          <h2 class="section__title">{{ section_title | newline_to_br }}</h2><!-- /.section__title -->
+        {%- endif -%}
 
-      <div class="section__body">
-        <ul>
-          {%- for block in product.metafields.accentuate.image -%}
-            {%- assign block_image = product.metafields.accentuate.image[forloop.index0][0] -%}
-            {%- assign block_title = product.metafields.small_title.small_title[forloop.index0] -%}
-            {%- assign block_content = product.metafields.content.content[forloop.index0] -%}
+        <div class="section__body">
+          <ul>
+            {%- for block in product.metafields.accentuate.image -%}
+              {%- assign block_image = product.metafields.accentuate.image[forloop.index0][0] -%}
+              {%- assign block_title = product.metafields.small_title.small_title[forloop.index0] -%}
+              {%- assign block_content = product.metafields.content.content[forloop.index0] -%}
 
-            <li>
-              {%- if block_image != blank -%}
-                <img src="{{ block_image.src }}" alt="{{ block_image.alt }}" />
-              {%- endif -%}
+              <li>
+                {%- if block_image != blank -%}
+                  <img src="{{ block_image.src }}" alt="{{ block_image.alt }}" />
+                {%- endif -%}
 
-              {%- if block_title != blank -%}
-                <h4>{{ block_title }}</h4>
-              {%- endif -%}
+                {%- if block_title != blank -%}
+                  <h4>{{ block_title }}</h4>
+                {%- endif -%}
 
-              {%- if block_content != blank -%}
-                <p>{{ block_content.html | newline_to_br }}</p>
-              {%- endif -%}
-            </li>
-          {%- endfor -%}
-        </ul>
-      </div><!-- /.section__body -->
-    </div><!-- /.section__inner -->
-  </div><!-- /.shell -->
-</section><!-- /.section-ingredients -->
+                {%- if block_content != blank -%}
+                  <p>{{ block_content.html | newline_to_br }}</p>
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div><!-- /.section__body -->
+      </div><!-- /.section__inner -->
+    </div><!-- /.shell -->
+  </section><!-- /.section-ingredients -->
+{% endif %}

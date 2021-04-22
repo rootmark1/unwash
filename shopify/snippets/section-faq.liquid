@@ -1,8 +1,10 @@
 {%- assign section_title = product.metafields.section_title.title -%}
 {%- assign section_decorations = product.metafields.accentuate.show_decorations -%}
 {%- assign section_bg_color = product.metafields.background_color.background_color -%}
+{% assign order = product.metafields.accentuate.order_faq %}
 
-<section class="section-faq" style="background-color: {{ section_bg_color }};">
+
+<section class="section-faq js-section-order" style="background-color: {{ section_bg_color }};" {% if order != blank %}data-order="{{ order }}"{% endif %}>
   {%- if section_decorations -%}
     <span class="decoration decoration--left"></span>
     <span class="decoration decoration--right"></span>

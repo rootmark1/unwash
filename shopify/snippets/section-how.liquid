@@ -5,43 +5,42 @@
 
 {%- assign section_cta_text = product.metafields.accentuate.call_to_action_text -%}
 {%- assign section_cta_url = product.metafields.accentuate.call_to_action_url -%}
+{%- assign order = product.metafields.accentuate.order_how -%}
 
-<script>
-  console.log({{ section_cta_url | json }});
-</script>
+{%- if section_title != blank or section_bg_image != blank or section_bg_image_mobile != blank or section_bg_color != blank section_cta_text != blank or section_cta_url != blank -%}
+  <section class="section-how js-section-order" style="background-color: {{ section_bg_color }};" {% if order != blank %}data-order="{{ order }}"{% endif %}>
+    {%- if section_bg_image != blank -%}
+      <div class="section__image {% if section_bg_image_mobile != blank %}section__image--desktop{% endif %}" style="background-image: url({{ section_bg_image.src }});"></div><!-- /.section__image -->
+    {%- endif -%}
 
-<section class="section-how" style="background-color: {{ section_bg_color }};">
-  {%- if section_bg_image != blank -%}
-    <div class="section__image {% if section_bg_image_mobile != blank %}section__image--desktop{% endif %}" style="background-image: url({{ section_bg_image.src }});"></div><!-- /.section__image -->
-  {%- endif -%}
+    {%- if section_bg_image_mobile != blank -%}
+      <div class="section__image section__image--mobile" style="background-image: url({{ section_bg_image_mobile.src }});"></div><!-- /.section__image -->
+    {%- endif -%}
 
-  {%- if section_bg_image_mobile != blank -%}
-    <div class="section__image section__image--mobile" style="background-image: url({{ section_bg_image_mobile.src }});"></div><!-- /.section__image -->
-  {%- endif -%}
+    <div class="shell">
+      <div class="section__inner">
+        <div class="section__body">
+          {%- if section_title != blank -%}
+            <h2 class="section__title">{{ section_title }}</h2><!-- /.section__title -->
+          {%- endif -%}
 
-  <div class="shell">
-    <div class="section__inner">
-      <div class="section__body">
-        {%- if section_title != blank -%}
-          <h2 class="section__title">{{ section_title }}</h2><!-- /.section__title -->
+          <ol class="list-how">
+            {%- for block in product.metafields.accentuate.list_item -%}
+              {%- assign block_text = block.html -%}
+
+              <li>
+                <p>{{ block_text | newline_to_br }}</p>
+              </li>
+            {%- endfor -%}
+          </ol><!-- /.list-how -->
+        </div><!-- /.section__body -->
+
+        {%- if section_cta_text != blank and section_cta_url != blank -%}
+          <div class="section__actions">
+            <a href="{{ section_cta_url }}" class="btn">{{ section_cta_text }}</a>
+          </div><!-- /.section__actions -->
         {%- endif -%}
-
-        <ol class="list-how">
-          {%- for block in product.metafields.accentuate.list_item -%}
-            {%- assign block_text = block.html -%}
-
-            <li>
-              <p>{{ block_text | newline_to_br }}</p>
-            </li>
-          {%- endfor -%}
-        </ol><!-- /.list-how -->
-      </div><!-- /.section__body -->
-
-      {%- if section_cta_text != blank and section_cta_url != blank -%}
-        <div class="section__actions">
-          <a href="{{ section_cta_url }}" class="btn">{{ section_cta_text }}</a>
-        </div><!-- /.section__actions -->
-      {%- endif -%}
-    </div><!-- /.section__inner -->
-  </div><!-- /.shell -->
-</section><!-- /.section-how -->
+      </div><!-- /.section__inner -->
+    </div><!-- /.shell -->
+  </section><!-- /.section-how -->
+{%- endif -%}

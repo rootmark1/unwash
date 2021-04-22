@@ -1,0 +1,21 @@
+{% assign background_image = product.metafields.accentuate.background_image[0].src %}
+{% assign images = product.metafields.images.images %}
+{% assign order = product.metafields.accentuate.order_images %}
+
+{% if background_image != blank or images != blank  %}
+  <section class="section-images js-section-order" {% if background_image != blank %}style="background-image: url({{ background_image }})"{% endif %} {% if order != blank %}data-order="{{ order }}"{% endif %}>
+    <div class="shell">
+      <div class="section__inner">
+        {% if images != blank %}
+          <div class="images">
+            {% for image in images limit:3 %}
+              <div class="images__item">
+                <div class="image" {% if image != blank %}style="background-image: url({{ image.src }})"{% endif %}></div><!-- /.image -->
+              </div><!-- /.images__item -->
+            {% endfor %}
+          </div><!-- /.images -->
+        {% endif %}
+      </div><!-- /.section__inner -->
+    </div><!-- /.shell -->
+  </section><!-- /.section-images -->
+{% endif %}

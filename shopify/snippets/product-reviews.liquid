@@ -1,4 +1,6 @@
-<div class="section-product-reviews">
+{% assign order = product.metafields.accentuate.order_reviews %}
+
+<div class="section-product-reviews js-section-order" {% if order != blank %}data-order="{{ order }}"{% endif %}>
   <div class="shell">
     <div class="section__inner">
       <h2 class="section__title">Reviews</h2>

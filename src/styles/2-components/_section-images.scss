@@ -1,0 +1,18 @@
+/* ------------------------------------------------------------ *\
+  section-images
+\* ------------------------------------------------------------ */
+
+.section-images {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding: 165px 0;
+
+  @media #{$tablet-portrait} {
+    padding: 100px 0;
+  }
+
+  @media #{$mobile} {
+    padding: 50px 0 40px;
+  }
+}

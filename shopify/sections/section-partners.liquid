@@ -1,31 +1,33 @@
 {%- assign _section = section.settings -%}
 {%- assign section_title = _section.title -%}
+{%- assign order = product.metafields.accentuate.order_partners -%}
 
-<section class="section-partners">
-  <div class="shell">
-    <div class="section__inner">
-      {%- if section_title != blank -%}
-        <h2 class="section__title">{{ section_title }}</h2><!-- /.section__title -->
-      {%- endif -%}
-      
-      <div class="section__body">
-        <ul class="list-partners">
-          {%- for block in section.blocks -%}
-            {%- assign _block = block.settings -%}
-            {%- assign block_image = _block.image -%}
-            
-            <li>
-              {%- if block_image != blank -%}
-                <img src="{{ block_image | img_url: '500x' }}" alt="{{ block_image.alt }}" />
-              {%- endif -%}
-            </li>
-          {%- endfor -%}
-        </ul>
-      </div><!-- /.section__body -->
-    </div><!-- /.section__inner -->
-  </div><!-- /.shell -->
-</section><!-- /.section-partners -->
+{% if _section.show_section %}
+  <section class="section-partners js-section-order" {% if order != blank %}data-order="{{ order }}"{% endif %}>
+    <div class="shell">
+      <div class="section__inner">
+        {%- if section_title != blank -%}
+          <h2 class="section__title">{{ section_title }}</h2><!-- /.section__title -->
+        {%- endif -%}
 
+        <div class="section__body">
+          <ul class="list-partners">
+            {%- for block in section.blocks -%}
+              {%- assign _block = block.settings -%}
+              {%- assign block_image = _block.image -%}
+
+              <li>
+                {%- if block_image != blank -%}
+                  <img src="{{ block_image | img_url: '500x' }}" alt="{{ block_image.alt }}" />
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div><!-- /.section__body -->
+      </div><!-- /.section__inner -->
+    </div><!-- /.shell -->
+  </section><!-- /.section-partners -->
+{% endif %}
 
 {% schema %}
 {
@@ -35,6 +37,12 @@
       "type": "text",
       "id": "title",
       "label": "Title"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_section",
+      "label": "Show Section",
+      "default": true
     }
   ],
   "max_blocks": 9999,

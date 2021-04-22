@@ -1,15 +1,38 @@
 {%- render 'product-main-info' -%}
+<div class="product-sections js-product-sections-order">
+  <div class="product__item">
+    {%- render 'section-results' -%}
+  </div><!-- /.product__item -->
 
-{%- render 'section-results' -%}
+  <div class="product__item">
+    {%- render 'section-ingredients' -%}
+  </div><!-- /.product__item -->
 
-{%- render 'section-ingredients' -%}
+  <div class="product__item">
+    {%- render 'section-how' -%}
+  </div><!-- /.product__item -->
 
-{%- render 'section-how' -%}
+  <div class="product__item">
+    {%- render 'featured-video' -%}
+  </div><!-- /.product__item -->
 
-{%- render 'featured-video' -%}
+  <div class="product__item">
+    {%- section 'section-partners' -%}
+  </div><!-- /.product__item -->
 
-{%- section 'section-partners' -%}
+  <div class="product__item">
+    {%- render 'section-images-alt' -%}
+  </div><!-- /.product__item -->
 
-{%- render 'product-reviews' -%}
+  <div class="product__item">
+    {%- render 'product-reviews' -%}
+  </div><!-- /.product__item -->
 
-{%- render 'section-faq' -%}
+  <div class="product__item">
+    {%- render 'section-images' -%}
+  </div><!-- /.product__item -->
+
+  <div class="product__item">
+    {%- render 'section-faq' -%}
+  </div><!-- /.product__item -->
+</div><!-- /.product-sections -->

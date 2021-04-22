@@ -2,8 +2,9 @@
 {%- assign section_content = product.metafields.accentuate.content -%}
 {%- assign section_cta_text = product.metafields.accentuate.button -%}
 {%- assign section_cta_url = product.metafields.accentuate.button_url -%}
+{% assign order = product.metafields.accentuate.order %}
 
-<section class="section-results">
+<section class="section-results js-section-order" {% if order != blank %}data-order="{{ order }}"{% endif %}>
   <div class="shell">
     <div class="section__inner">
       <header class="section__head">
