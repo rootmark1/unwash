@@ -608,9 +608,23 @@
 \* ------------------------------------------------------------ */
 .slider-pdp {
   margin-bottom: 20px; }
-  .slider-pdp .slide img {
-    display: block;
-    width: 100%; }
+  .slider-pdp .slide {
+    position: relative; }
+    .slider-pdp .slide img,
+    .slider-pdp .slide video,
+    .slider-pdp .slide iframe {
+      display: block;
+      width: 100%; }
+    .slider-pdp .slide iframe,
+    .slider-pdp .slide video {
+      padding: 0 60px; }
+    .slider-pdp .slide iframe {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%; }
+  .slider-pdp .slide--external-video {
+    padding-top: 56.25%; }
   .slider-pdp .slick-arrow {
     font-size: 0;
     line-height: 0;

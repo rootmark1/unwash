@@ -1,12 +1,40 @@
 import 'slick-carousel';
 
-$('.slider-pdp .js-slides').slick({
+const $pdpSlider = $('.slider-pdp .js-slides');
+
+$pdpSlider.slick({
   infinite: true,
   slidesToShow: 1,
   slidesToScroll: 1,
   adaptiveHeight: true,
   fade: true,
   asNavFor: $('.slider-thumbs .js-thumbs')
+});
+
+function silenceHiddenVideos($sliderName) {
+  $sliderName.find('.slick-slide').each(function() {
+    const $this = $(this);
+
+    if (! $this.hasClass('slick-active')) {
+      const video = $this.find('video').get(0);
+
+      if (video) {
+        video.pause();
+      }
+
+      const externalVideo = $this.find('.slide--external-video').find('iframe');
+
+      if (externalVideo) {
+        const currentSrc = externalVideo.prop('src');
+        externalVideo.prop('src', '');
+        externalVideo.prop('src', currentSrc);
+      }
+    }
+  })
+}
+
+$pdpSlider.find('.slick-arrow').on('click', function() {
+  silenceHiddenVideos($pdpSlider);
 });
 
 $('.slider-thumbs .js-thumbs').slick({

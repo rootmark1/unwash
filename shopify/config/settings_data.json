@@ -307,7 +307,6 @@
         "type": "collection-footer",
         "settings": {
           "show_section": false,
-          "image": "",
           "text_color": "#ffffff",
           "apply_overlay": true,
           "title": "Our story",
@@ -741,7 +740,8 @@
           "5ce09906-8a6b-4489-bc25-a195fa2c38bf"
         ],
         "settings": {
-          "title": "As seen in"
+          "title": "As seen in",
+          "show_section": false
         }
       },
       "section-faq": {

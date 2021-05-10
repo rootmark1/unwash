@@ -24,16 +24,14 @@
             <div class="slider-pdp">
               <div class="slider__clip">
                 <div class="js-slides">
-                  {%- for image in product.media -%}
-                    <div class="slide">
-                      <img src="{{ image | img_url: '600x' }}" alt="{{ image.alt }}" />
-                    </div><!-- /.slide -->
+                  {%- for media in product.media -%}
+                    {%- render 'media', media: media -%}
                   {%- endfor -%}
                 </div><!-- /.js-slides -->
               </div><!-- /.slider__clip -->
             </div><!-- /.slider -->
           </div><!-- /.product__image -->
-          
+
           <div class="product__thumbs">
             <div class="slider-thumbs">
               <div class="slider__clip">
@@ -49,23 +47,23 @@
           </div><!-- /.product__thumbs -->
         </div><!-- /.product__media -->
       {%- endif -%}
-      
+
       <div class="product__body">
         <header class="product__head">
           <h3 class="product__vendor">
             {{ product.vendor }}
           </h3><!-- /.product__vendor -->
-              
+
           <h2 class="product__title">
             {{ product.title }}
           </h2><!-- /.product__title -->
-          
+
           <div class="product__rating">
             <a href="#reviews">
               <span class="stamped-product-reviews-badge stamped-main-badge" data-id="{{ product.id }}" data-product-sku="{{ product.handle }}" data-product-type="{{product.type}}" data-product-title="{{product.title}}" style="display: inline-block;">{{ product.metafields.stamped.badge }}</span>
             </a>
           </div><!-- /.product__rating -->
-          
+
           <h4 class="product__price">
             <div class="ProductMeta__PriceList">
               {%- if product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price -%}
@@ -77,22 +75,22 @@
             </div>
           </h4><!-- /.product__price -->
         </header><!-- /.product__head -->
-        
+
         <div class="product__content">
           {{ product.content }}
         </div><!-- /.product__content -->
-        
+
         <div class="product__form">
           {%- render 'product-form-alt', product: product -%}
         </div><!-- /.product__form -->
-        
+
         <div class="product__badges">
           <ul>
             {%- assign all_tasgs = product.tags | reverse -%}
             {%- for tag in all_tasgs -%}
               {%- if tag contains 'badge:' -%}
                 {%- assign tag_handle = tag | split: 'badge:' | last -%}
-                
+
                 <li>{{ tag_handle }}</li>
               {%- endif -%}
             {%- endfor -%}

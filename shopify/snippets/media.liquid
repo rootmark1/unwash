@@ -1,0 +1,22 @@
+{% case media.media_type %}
+  {% when 'image' %}
+    <div class="slide">
+      <img src="{{ media | img_url: '600x' }}" alt="{{ media.alt }}" />
+    </div><!-- /.slide -->
+  {% when 'external_video' %}
+    <div class="slide slide--external-video js-external-video">
+      {{ media | external_video_tag }}
+    </div><!-- /.slide -->
+  {% when 'video' %}
+    <div class="slide js-video">
+      {{ media | video_tag: controls: true, autoplay: true, muted: true }}
+    </div><!-- /.slide -->
+  {% when 'model' %}
+    <div class="slide">
+      {{ media | model_viewer_tag }}
+    </div><!-- /.slide -->
+  {% else %}
+    <div class="slide">
+      {{ media | media_tag }}
+    </div><!-- /.slide -->
+{% endcase %}

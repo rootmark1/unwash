@@ -1,0 +1,70 @@
+{% assign metafield = product.metafields.accentuate %}
+{% assign show_section_images = metafield.hide_section %}
+{% assign show_section_images_alt = metafield.hide_section_images %}
+{% assign show_section_reviews = metafield.hide_section_reviews %}
+{% assign show_section_partners = metafield.hide_section_partners %}
+{% assign show_section_results = metafield.hide_section_results %}
+{% assign show_section_ingredients = metafield.hide_section_ingredients %}
+{% assign show_section_how = metafield.hide_section_how %}
+{% assign show_section_faq = metafield.hide_section_faq %}
+{% assign show_section_video = metafield.hide_section_video %}
+
+{%- render 'product-main-info' -%}s
+
+{% unless show_section_results and show_section_ingredients and show_section_how and show_section_video and show_section_partners and show_section_images_alt and show_section_reviews and show_section_images and show_section_faq %}
+  <div class="product-sections js-product-sections-order">
+    {% unless show_section_results %}
+      <div class="product__item">
+        {%- render 'section-results' -%}
+      </div><!-- /.product__item -->
+    {% endunless %}
+
+    {% unless show_section_ingredients %}
+      <div class="product__item">
+        {%- render 'section-ingredients' -%}
+      </div><!-- /.product__item -->
+    {% endunless %}
+
+    {% unless show_section_how %}
+      <div class="product__item">
+        {%- render 'section-how' -%}
+      </div><!-- /.product__item -->
+    {% endunless %}
+
+    {% unless show_section_video %}
+      <div class="product__item">
+        {%- render 'featured-video' -%}
+      </div><!-- /.product__item -->
+    {% endunless %}
+
+    {% unless show_section_partners %}
+      <div class="product__item">
+        {%- section 'section-partners' -%}
+      </div><!-- /.product__item -->
+    {% endunless %}
+
+    {% unless show_section_images_alt %}
+      <div class="product__item">
+        {%- render 'section-images-alt' -%}
+      </div><!-- /.product__item -->
+    {% endunless %}
+
+    {% unless show_section_reviews %}
+      <div class="product__item">
+        {%- render 'product-reviews' -%}
+      </div><!-- /.product__item -->
+    {% endunless %}
+
+    {% unless show_section_images %}
+      <div class="product__item">
+        {%- render 'section-images' -%}
+      </div><!-- /.product__item -->
+    {% endunless %}
+
+    {% unless show_section_faq %}
+      <div class="product__item">
+        {%- render 'section-faq' -%}
+      </div><!-- /.product__item -->
+    {% endunless %}
+  </div><!-- /.product-sections -->
+{% endunless %}
