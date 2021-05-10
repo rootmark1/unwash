@@ -2,6 +2,11 @@ import 'slick-carousel';
 
 const $pdpSlider = $('.slider-pdp .js-slides');
 
+/**
+ * Initialize PDP SLider.
+ *
+ * @return {Void}
+ */
 $pdpSlider.slick({
   infinite: true,
   slidesToShow: 1,
@@ -11,6 +16,12 @@ $pdpSlider.slick({
   asNavFor: $('.slider-thumbs .js-thumbs')
 });
 
+/**
+ * Silence Hidden Videos
+ *
+ * @param  {jquery element} $sliderName
+ * @return {Void}
+ */
 function silenceHiddenVideos($sliderName) {
   $sliderName.find('.slick-slide').each(function() {
     const $this = $(this);
@@ -33,10 +44,20 @@ function silenceHiddenVideos($sliderName) {
   })
 }
 
+/**
+ * Handle Arrow Click
+ *
+ * @return {Void}
+ */
 $pdpSlider.find('.slick-arrow').on('click', function() {
   silenceHiddenVideos($pdpSlider);
 });
 
+/**
+ * Initialize Slider Thumbs.
+ *
+ * @return {Void}
+ */
 $('.slider-thumbs .js-thumbs').slick({
   infinite: true,
   slidesToShow: 3,
@@ -56,13 +77,23 @@ $('.slider-thumbs .js-thumbs').slick({
   ]
 });
 
+/**
+ * Handle Radio Variant
+ *
+ * @return {Void}
+ */
 $('.js-radio-variant').on('change', function(event) {
-  const $this   = $(this);
-  const val     = $this.data('name');
+  const $this = $(this);
+  const val = $this.data('name');
 
   $('.product-single__variants option[data-variantname="'+val+'"]').prop('selected', true)
 });
 
+/**
+ * Add order classes dynamically
+ *
+ * @return {Void}
+ */
 $('.js-section-order').each(function() {
   const $this = $(this);
   const number = $this.data('order');
