@@ -83,6 +83,24 @@
         <div class="product__form">
           {%- render 'product-form-alt', product: product -%}
         </div><!-- /.product__form -->
+        
+        {%- if product.metafields.acc.title.size > 0 -%}
+          <div class="Product__Tabs Tabs__meta">
+            {%- for item in product.metafields.acc.title -%}
+              <div class="Collapsible Collapsible--large">
+                <button class="Collapsible__Button Heading u-h6" data-action="toggle-collapsible" aria-expanded="false">
+                  {{ product.metafields.acc.title[forloop.index0] }}: <span class="Collapsible__Plus"></span>
+                </button>
+
+                <div class="Collapsible__Inner">
+                  <div class="Collapsible__Content">
+                    <div class="Rte">{{ product.metafields.acc.content[forloop.index0] }}</div>
+                  </div>
+                </div>
+              </div>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
 
         <div class="product__badges">
           <ul>

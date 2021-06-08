@@ -453,11 +453,11 @@
       font-weight: inherit;
       line-height: 1; }
   .product-primary .product__content {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 300;
     letter-spacing: 0.02em;
     line-height: 1.65;
-    margin-bottom: 14px; }
+    margin-bottom: 10px; }
     @media (max-width: 767px) {
       .product-primary .product__content {
         font-size: 16px; } }
