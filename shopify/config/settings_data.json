@@ -213,28 +213,13 @@
               "button_1_link": "shopify:\/\/products\/unwash-dry-cleanser",
               "button_2_text": ""
             }
-          },
-          "1591656981839": {
-            "type": "image",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/Unwash-Website_ImagesdesktopHome_Page_Slider_6.jpg",
-              "mobile_image": "shopify:\/\/shop_images\/Unwash-Website_ImagesmobileHome_Page_Slider_6.jpg",
-              "apply_overlay": false,
-              "content_position": "middleCenter",
-              "subheading": "Restores natural oils leaving hair",
-              "title": "smooth, shiny and voluminous",
-              "button_1_text": "shop overnight hair masque",
-              "button_1_link": "shopify:\/\/products\/overnight-hair-masque",
-              "button_2_text": ""
-            }
           }
         },
         "block_order": [
           "1591659037196",
           "1591659825856",
           "1591922207535",
-          "1591922100990",
-          "1591656981839"
+          "1591922100990"
         ],
         "settings": {
           "show_fullscreen": false,
