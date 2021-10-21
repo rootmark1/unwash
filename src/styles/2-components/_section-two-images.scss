@@ -1,0 +1,83 @@
+/* ------------------------------------------------------------ *\
+	Section - two images
+\* ------------------------------------------------------------ */
+
+.section-two-images {
+	.section__images {
+		display: flex; 
+
+		@media #{$mobile} {
+			display: block; 
+		}
+	}
+
+	.section__image {
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: 50% 50%;
+		padding-bottom: 55.1%;
+
+		@media #{$mobile} {
+		 	padding-bottom: 100%; 
+		 } 
+	}
+
+	.section__image--left {
+		background-position: 100% 50%;
+	}
+
+	.section__image--right {
+		background-position: 0 50%;
+	}
+
+	.section__image:not(.section__image--full-width):first-of-type {
+		max-width: 55%; 
+		flex: 0 0 55%;
+		
+		@media #{$mobile} {
+			max-width: 100%; 	
+		}
+	}
+
+	.section__image:not(.section__image--full-width):last-of-type {
+		max-width: 45%;
+		flex: 0 0 45%; 
+
+		@media #{$mobile} {
+			max-width: 100%; 
+		}
+	}
+
+	.section__image--full-width {
+		max-width: 100%;
+		flex: 0 0 100%; 
+	}
+
+	.section__body {
+		padding: 8px 0; 
+		text-align: center; 
+	}
+
+	.section__entry {
+		font-family: $font-gotham; 
+		font-weight: 700; 
+		font-size: 43px; 
+		text-transform: uppercase; 
+		letter-spacing: 0.125em;
+		color: #000005; 
+
+		@media #{$small-desktop} {
+			font-size: 37px; 
+		}
+
+		@media #{$tablet-portrait} {
+			font-size: 30px; 
+			letter-spacing: 0.05em; 
+		}
+
+		@media #{$mobile} {
+			font-size: 24px; 
+		}
+	}
+}
+

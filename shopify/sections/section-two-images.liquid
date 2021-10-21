@@ -1,0 +1,109 @@
+{%- comment -%} Settings {%- endcomment -%}
+{%- assign _section = section.settings -%}
+{%- assign entry_text = _section.entry_text -%}
+{%- assign second_image_missing = true -%}
+
+{%- if _section['image_1'] != blank and _section['image_2'] != blank -%}
+	{%- assign second_image_missing = false -%}
+{%- endif -%}
+
+{%- comment -%} Images {%- endcomment -%}
+<div class="section__images">
+	{%- for i in (1..2) -%}
+		{%- assign image_ref = 'image_' | append: i -%}
+		{%- assign image_position = 'image_' | append: i | append: '_position' -%}
+		{%- if _section[image_ref] != blank -%}
+			<div class="section__image {% if second_image_missing %} section__image--full-width {% endif %} section__image--{{ _section[image_position] }}" style="background-image: url('{{ _section[image_ref] | img_url: '666x'  }}');" ></div><!-- /.section__image -->
+		{%- endif -%}
+	{%- endfor -%}
+</div><!-- /.section__images -->
+
+{%- comment -%} Text {%- endcomment -%}
+{%- if entry_text != blank -%}
+	<div class="section__body">
+		<div class="shell">
+			<h3 class="section__entry">
+				{{ entry_text }}
+			</h3><!-- /.section__entry -->
+		</div><!-- /.shell -->
+	</div><!-- /.section__body -->
+{%- endif -%}
+
+{% schema %}
+{
+	"name": "Two images section",
+	"class": "section-two-images",
+	"tag": "section",
+	"settings": [
+		{
+			"type": "header",
+			"content": "Image 1"
+		},
+		{
+			"type": "image_picker",
+			"id": "image_1",
+			"label": "Image"
+		},
+		{
+			"type": "select",
+			"id": "image_1_position",
+			"label": "Image position",
+			"options": [
+				{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "center",
+					"label": "Center"
+				},
+				{
+					"value": "right",
+					"label": "Right"
+				}
+			],
+			"default": "center"
+		},
+		{
+			"type": "header",
+			"content": "Image 2"
+		},
+		{
+			"type": "image_picker",
+			"id": "image_2",
+			"label": "Image"
+		},
+		{
+			"type": "select",
+			"id": "image_2_position",
+			"label": "Image position",
+			"options": [
+				{
+					"value": "left",
+					"label": "Left"
+				},
+				{
+					"value": "center",
+					"label": "Center"
+				},
+				{
+					"value": "right",
+					"label": "Right"
+				}
+			],
+			"default": "center"
+		},
+		{
+			"type": "text",
+			"id": "entry_text",
+			"label": "Entry text"
+		}
+	],
+	"presets": [
+		{
+			"name": "Two images section",
+			"category": "text"
+		}
+	]
+}
+{% endschema %}

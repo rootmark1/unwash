@@ -1,0 +1,130 @@
+{%- comment -%} Settings {%- endcomment -%}
+{%- assign _blocks = section.blocks -%}
+
+{%- capture section_settings -%}
+	{
+		"useAjaxCart": {% if settings.cart_type == 'drawer' %}true{% else %}false{% endif %}
+	}
+{%- endcapture -%}
+
+{%- if _blocks.size > 0 -%}
+	<div class="shell">
+		{%- for block in _blocks -%}
+			{%- comment -%} Block settings {%- endcomment -%}
+			{%- assign _block = block.settings -%}
+			{%- assign product = all_products[_block.product] -%}
+			{%- assign price_is_reduced = _block.is_reduced -%}
+			{%- assign image = _block.image -%}
+			{%- if image == blank -%}
+				{%- assign image = product.featured_image -%}
+			{%- endif -%}
+			{%- assign caption = _block.caption -%}
+			{%- assign caption_at_top = _block.caption_at_top -%}
+			{%- assign caption_spacing = _block.caption_spacing -%}
+			{%- assign loop_index_is_even = forloop.index | modulo: 2 -%}
+			{%- capture block_offset -%}
+				{%- if loop_index_is_even == 0 -%}
+					offset
+				{%- else -%}
+					no-offset
+				{%- endif -%}
+			{%- endcapture -%}
+			
+			{%- comment -%} Block content {%- endcomment -%}
+			<div class="section__product section__product--{{ block_offset }}">
+				<div class="section__product-image">
+					<img src="{{ image | img_url: '414x' }}" alt="{{ image.alt | escape }}">
+				</div><!-- /.section__product-image -->
+
+				<div class="section__product-content {% if caption_at_top %} section__product-content--top {% endif %}">
+					{%- if caption != blank -%}
+						<div class="section__product-caption section__product-caption--{{caption_spacing}}">
+							{{- caption -}}	
+						</div><!-- /.section__product-caption -->
+					{%- endif -%}
+
+					<div class="section__product-price-wrapper {% if product.compare_at_price < product.price or price_is_reduced %} section__product-price-wrapper--reduced {% endif %}">
+						{%- if product.compare_at_price < product.price or price_is_reduced -%}
+							<p class="section__product-price-subhead">Now</p><!-- /.section__product-price-subhead -->
+						{%- endif -%}
+						<p class="section__product-price"> <sup>$</sup>{{ product.price | money | split: '$' | last }}</p>
+					</div><!-- /.section__product-price -->
+
+					<div class="section__product-form">
+						{%- render 'product-form', product: product -%}
+					</div><!-- /.section__product-form -->
+				</div><!-- /.section__product-content -->
+			</div><!-- /.section__product -->
+		{%- endfor -%}
+	</div><!-- /.shell -->
+{%- endif -%}
+
+{% schema %}
+{
+	"name": "Products",
+	"class": "section-products",
+	"tag": "section",
+	"blocks": [
+		{
+			"name": "Product",
+			"type": "image",
+			"settings": [
+				{
+					"type": "product",
+					"id": "product",
+					"label": "Product"
+				},
+				{
+					"type": "checkbox",
+					"id": "is_reduced",
+					"label": "Product is reduced.",
+					"default": false,
+					"info": "If compare at price is put on product, this will be ignored."
+				},
+				{
+					"type": "image_picker",
+					"id": "image",
+					"label": "Product image to show instead"
+				},
+				{
+					"type": "richtext",
+					"id": "caption",
+					"label": "Product Caption"
+				},
+				{
+					"type": "header",
+					"content": "Layout options"
+				},
+				{
+					"type": "checkbox",
+					"id": "caption_at_top",
+					"label": "Display caption aligned with top of product image",
+					"default": true
+				},
+				{
+					"type": "select",
+					"id": "caption_spacing",
+					"label": "Caption spacing",
+					"options": [
+						{
+							"value": "normal",
+							"label": "Normal"
+						},
+						{
+							"value": "spaced",
+							"label": "Spaced"
+						}
+					],
+					"default": "normal"
+				}
+			]
+		}
+	],
+	"presets": [
+		{
+			"name": "Products",
+			"category": "text"
+		}
+	]
+}
+{% endschema %}

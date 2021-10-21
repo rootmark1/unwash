@@ -1,0 +1,111 @@
+/* ------------------------------------------------------------ *\
+	Section - Image with content
+\* ------------------------------------------------------------ */
+
+.section-image-with-content {
+	font-family: $font-gotham; 
+	
+	.section__inner {
+		display: flex; 
+		justify-content: center;
+		align-items: flex-end;
+
+		@media #{$mobile} {
+			display: block; 
+		}
+	}
+
+	.section__inner--left .section__image {
+		order: 2;
+	}
+
+	.section__inner--left .section__head:not(.section__head--center) {
+		order: 1;
+		text-align: right; 
+		padding: 86px 51px 86px 0;
+	}
+
+	.section__image {
+		max-width: 46%; 
+		flex: 0 0 46%;
+		padding-bottom: 62.2%; 
+		background-position: 50% 50%;
+		background-size: cover;
+		background-repeat: no-repeat;
+
+		@media #{$mobile} {
+		  	max-width: 100%; 
+		  	padding-bottom: 100%; 
+		}  
+	}
+
+	.section__head {
+		max-width: 54%; 
+		flex: 0 0 54%;
+		padding: 86px 0 86px 51px;
+		text-transform: uppercase; 
+		font-weight: 700;
+		color: #000005;
+
+		@media #{$tablet-portrait} {
+			max-width: 100%; 
+			padding: 20px 0; 
+			text-align: center;   	
+		}  
+	}
+
+	.section__head--center {
+		text-align: center; 
+		padding: 86px 0; 
+
+		@media #{$mobile} {
+			padding: 20px 0; 
+		}
+	}
+
+	.section__title {
+		font-size: 129px; 
+		line-height: 0.92;
+		margin-bottom: 20px; 
+
+		@media #{$small-desktop} {
+			font-size: 89px; 
+		}
+
+		@media #{$tablet-portrait} {
+			font-size: 59px; 
+		}
+	}
+
+	.section__head p {
+		font-size: 59px; 
+		line-height: 1.2;
+
+		@media #{$small-desktop} {
+			font-size: 49px; 
+		}
+
+		@media #{$tablet-portrait} {
+			font-size: 29px; 
+		}
+	}
+
+	.section__body {
+		padding: 49px 0 40px; 
+		text-align: center; 
+		background-color: #000005;
+		color: #fff;
+		text-transform: uppercase;   
+		font-size: 58px; 
+		font-weight: 700; 
+		line-height: 1.3;
+
+		@media #{$small-desktop} {
+			font-size: 48px; 
+		}
+
+		@media #{$tablet-portrait} {
+			font-size: 35px; 
+		}
+	}
+}
