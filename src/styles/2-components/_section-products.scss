@@ -121,6 +121,15 @@
 		}
 	}
 
+	.section__product-caption a {
+		color: #99b9ae;
+		transition: color .4s;  
+	
+		&:hover {
+			color: #000005; 
+		}
+	}
+
 	.section__product-caption--spaced {
 		line-height: 1.85;
 	}

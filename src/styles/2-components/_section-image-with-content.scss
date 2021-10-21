@@ -108,4 +108,13 @@
 			font-size: 35px; 
 		}
 	}
+
+	.section__body a {
+		color: #99b9ae; 
+		transition: color .4s;
+
+		&:hover {
+			color: #fff; 
+		} 
+	}
 }

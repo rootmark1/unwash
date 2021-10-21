@@ -1575,6 +1575,12 @@
     @media (max-width: 1023px) {
       .section-image-with-content .section__body {
         font-size: 35px; } }
+  .section-image-with-content .section__body a {
+    color: #99b9ae;
+    -webkit-transition: color .4s;
+    transition: color .4s; }
+    .section-image-with-content .section__body a:hover {
+      color: #fff; }
 
 /* ------------------------------------------------------------ *\
 	Section - Products
@@ -1691,6 +1697,12 @@
     @media (max-width: 1023px) {
       .section-products .section__product-caption {
         font-size: 34px; } }
+  .section-products .section__product-caption a {
+    color: #99b9ae;
+    -webkit-transition: color .4s;
+    transition: color .4s; }
+    .section-products .section__product-caption a:hover {
+      color: #000005; }
   .section-products .section__product-caption--spaced {
     line-height: 1.85; }
   .section-products .section__product-content--top .section__product-caption {
