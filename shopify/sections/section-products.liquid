@@ -13,11 +13,10 @@
 			{%- comment -%} Block settings {%- endcomment -%}
 			{%- assign _block = block.settings -%}
 			{%- assign product = all_products[_block.product] -%}
+			{%- assign selected_variant = product.selected_or_first_available_variant -%}
 			{%- assign price_is_reduced = _block.is_reduced -%}
-			{%- assign image = _block.image -%}
-			{%- if image == blank -%}
-				{%- assign image = product.featured_image -%}
-			{%- endif -%}
+			{%- assign option_name = _block.option_name | downcase -%}
+			{%- assign option_value = _block.option_value -%}
 			{%- assign caption = _block.caption -%}
 			{%- assign caption_at_top = _block.caption_at_top -%}
 			{%- assign caption_spacing = _block.caption_spacing -%}
@@ -29,7 +28,25 @@
 					no-offset
 				{%- endif -%}
 			{%- endcapture -%}
+
+			{% comment %} Select product variant {% endcomment %}
+			{%- if option_name != blank and option_value != blank and product.variants.size > 1 -%}
+				{% comment %} Find variant data {% endcomment %}
+				{%- for variant in product.variants -%}
+					{%- for option in variant.options -%}
+						{%- assign downcase_option = option | downcase -%}
+						{%- if option == option_value -%}
+							{%- assign selected_variant = variant -%}
+						{%- endif -%}
+					{%- endfor -%}
+				{%- endfor -%}
+			{%- endif -%}
 			
+			{%- assign image = _block.image -%}
+			{%- if image == blank -%}
+				{%- assign image = selected_variant.featured_image -%}
+			{%- endif -%}
+
 			{%- comment -%} Block content {%- endcomment -%}
 			<div class="section__product section__product--{{ block_offset }}">
 				<div class="section__product-image">
@@ -44,14 +61,41 @@
 					{%- endif -%}
 
 					<div class="section__product-price-wrapper {% if product.compare_at_price < product.price or price_is_reduced %} section__product-price-wrapper--reduced {% endif %}">
-						{%- if product.compare_at_price < product.price or price_is_reduced -%}
+						{%- if selected_variant.compare_at_price < selected_variant.price or price_is_reduced -%}
 							<p class="section__product-price-subhead">Now</p><!-- /.section__product-price-subhead -->
 						{%- endif -%}
-						<p class="section__product-price"> <sup>$</sup>{{ product.price | money | split: '$' | last }}</p>
+						<p class="section__product-price"> <sup>$</sup>{{ selected_variant.price | money | split: '$' | last }}</p>
 					</div><!-- /.section__product-price -->
 
 					<div class="section__product-form">
-						{%- render 'product-form', product: product -%}
+						{%- form 'product', product, class: 'ProductForm' -%}
+							{%- if product.variants.size > 1 -%}
+								<select id="product-select-{{ product.id }}" hidden name="id" title="Variant">
+						            {%- for variant in product.variants -%}
+						              <option {% if variant == selected_variant %}selected="selected"{% endif %} {% unless variant.available %}disabled="disabled"{% endunless %} value="{{ variant.id }}" data-sku="{{ variant.sku }}">{{ variant.title }} - {{ variant.price | money }}</option>
+						            {%- endfor -%}
+						        </select>
+						    {%- else -%}
+						    	<input type="hidden" name="id" data-sku="{{ selected_variant.sku }}" value="{{ selected_variant.id }}" hidden>
+							{%- endif -%}
+
+							<button type="submit" class="ProductForm__AddToCart Button {% if selected_variant.available and section.settings.show_payment_button == false %}Button--primary{% else %}Button--secondary{% endif %} Button--full" {% if selected_variant.available %}data-action="add-to-cart"{% else %}disabled="disabled"{% endif %}>
+							    {%- if selected_variant.available -%}
+									<span>{% if product.template_suffix == 'pre-order' %}{{ 'product.form.pre_order' | t }}{% else %}{{ 'product.form.add_to_cart' | t }}{% endif %}</span>
+
+									{%- if section.settings.show_price_in_button -%}
+										<span class="Button__SeparatorDot"></span>
+										<span>{{ selected_variant.price | money_without_trailing_zeros }}</span>
+									{%- endif -%}
+								{%- else -%}
+									{{- 'product.form.sold_out' | t -}}
+								{%- endif -%}
+							</button>
+
+							{%- if section.settings.show_payment_button and product.template_suffix != 'pre-order' -%}
+								{{ form | payment_button }}
+							{%- endif -%}
+						{%- endform -%}
 					</div><!-- /.section__product-form -->
 				</div><!-- /.section__product-content -->
 			</div><!-- /.section__product -->
@@ -90,6 +134,20 @@
 					"type": "richtext",
 					"id": "caption",
 					"label": "Product Caption"
+				},
+				{
+					"type": "header",
+					"content": "Variant picker"
+				},
+				{
+					"type": "text",
+					"id": "option_name",
+					"label": "Option name"
+				},
+				{
+					"type": "text",
+					"id": "option_value",
+					"label": "Option value"
 				},
 				{
 					"type": "header",
